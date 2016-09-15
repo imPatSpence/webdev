@@ -1,0 +1,21 @@
+body{
+	background-color:lightblue;
+}
+div.toolbar{
+	float:right;
+}
+.blueButton {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 13px; 
+}
+.blueButton:hover {
+    background-color: #ffffff; /* White */
+    color: black;
+}
