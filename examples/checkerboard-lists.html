@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<title>Checkboard with Lists</title>
+<style>
+ul, li {
+  list-style-type:none; /* gets rid of bullet points */
+  margin:0;
+  padding:0;
+  overflow:auto;
+}
+body > ul {
+  margin:0 auto; /* centers the checkboard */
+  width:400px;
+  padding:10px;
+  border:outset 3px black;
+  background-color:white;
+}
+li li {
+  width:50px;
+  height:50px;
+  float:left;
+}
+li li {
+  background-color:silver;
+}
+li:nth-child(even) li:nth-child(even),
+li:nth-child(odd) li:nth-child(odd) {
+  background-color:gold;
+}
+</style>
+</head>
+<body>
+<ul>
+  <li>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>
