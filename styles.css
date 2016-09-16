@@ -1,8 +1,19 @@
 body{
-	background-color:lightblue;
+	background-color:#DCDBDB;;
 }
 div.toolbar{
 	float:right;
+}
+#rectangle {
+	width:max-width;
+	height:200px;
+	background:grey;
+}
+#inner {
+	font-size: 30px;
+	height: 50%;
+	width: 50%;
+	margin: 0 auto; 
 }
 .blueButton {
     background-color: #008CBA; /* Blue */
