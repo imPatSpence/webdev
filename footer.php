@@ -1,1 +1,1 @@
-<?php echo "Footer"?>
+<?php echo "Copyright shit goes here"?>

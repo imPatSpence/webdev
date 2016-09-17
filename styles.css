@@ -6,12 +6,23 @@ body{
 div.toolbar{
 	float:right;
 }
+Slogan {
+	
+	
+}
+img {
+	position: absolute;
+    left: 200px;
+    top: 100px;
+    z-index: 2;
+}
 #rectangle {
 	width:max-width;
 	height:200px;
 	background:grey;
 	border-radius: 13px;
 	margin-top:42px 
+	
 }
 #navBar {
 	width:max-width;
@@ -19,7 +30,7 @@ div.toolbar{
 	background:black;
 	opacity: 0.8;
 	position: fixed;
-    	left: 0;
+    left: 0;
    	top: 0;
    	width: 100%;
 }
@@ -36,19 +47,18 @@ li{
 	color:white;
 }
 
-#inner {
+.inner {
 	position: relative;
-	top: 50%;
 	font-size: 30px;
-	vertical-align: middle;
-	width: 50%;
-	margin: 0 auto;
+	color:white;
+	padding: 70px 0;
+	text-align:center;
 }
 #rectangleFooter{
 	width:max-width;
 	height:50px;
-	background:grey;i
-	margin
+	background:grey;
+	
 	
 }
 .footer {
