@@ -1,0 +1,35 @@
+div.loginbox{
+	align:center;
+	padding-top: 10px;
+	margin: 0 auto; 
+	border-style: solid;
+	box-shadow: 10px 10px 5px #888888;
+	margin-top: 45px;
+	min-width: 35%;
+	max-width: 40%;
+}
+
+input[type=text],[type=password] {
+    padding: 10px 20px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    border: 2px solid gray;
+    border-radius: 4px;
+}
+
+ul.signupList{
+	list-style: none;
+}
+.button {
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float:right;
+    margin-bottom: 15px;
+    margin: 10px;
+
+}

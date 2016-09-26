@@ -1,10 +1,13 @@
 body{
 	margin: 0px;
-	background-color:#DCDBDB;
+	background-color:#ffffff;
 	
 }
-div.toolbar{
+div.toolbarRight{
 	float:right;
+}
+div.toolbarLeft{
+	float:left;
 }
 Slogan {
 	
@@ -12,8 +15,8 @@ Slogan {
 }
 img {
 	position: absolute;
-    left: 200px;
-    top: 100px;
+    left: 100px;
+    top: 70px;
     z-index: 2;
 }
 #rectangle {
@@ -22,7 +25,6 @@ img {
 	background:grey;
 	border-radius: 13px;
 	margin-top:42px 
-	
 }
 #navBar {
 	width:max-width;
@@ -30,17 +32,17 @@ img {
 	background:black;
 	opacity: 0.8;
 	position: fixed;
-    left: 0;
+	left: 0;
    	top: 0;
    	width: 100%;
 }
-ul{
+ul.toolbar2{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 }
-li{
+li.toolbar{
 	font-size:20px;
 	float:left;
 	padding: 8px;
@@ -57,13 +59,13 @@ li{
 #rectangleFooter{
 	width:max-width;
 	height:50px;
-	background:grey;
+	background:#00688B;
 	
 	
 }
 .footer {
-    	position: absolute;
-    	bottom: 0;
+    position: absolute;
+    bottom: 0;
 	width:100%
   }
   
