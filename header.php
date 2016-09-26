@@ -1,16 +1,13 @@
 <div id = "navbar">
-	<div id = "navProps">
-		<ul>
-			<li>Home</li>
-			<li>About</li>
-			<div class ="toolbar">
-				<li>Login</li>
-				<li>Signup</li>
+		<ul class="toolbar2">
+			<div class ="toolbarLeft">
+				<li class="toolbar">Home</li>
+				<li class ="toolbar">About</li>
+			</div>
+			<div class ="toolbarRight">
+				<li class ="toolbar">Login</li>
+				<li class ="toolbar">Signup</li>
 			</div>
 		</ul>
-	<!--<button class="blueButton">Join</button>
-	<button class="blueButton">Login</button>
-	-->
-	</div>
 </div>
 
