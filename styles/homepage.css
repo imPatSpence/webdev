@@ -6,6 +6,7 @@ div.testimonials{
 	min-width: 48%;
 	border-style: solid;
     border-width: 1px;
+    margin:10px;
 }
 div.pictures{
 	float: right;
@@ -15,6 +16,7 @@ div.pictures{
 	min-width: 35%%;
 	border-style: solid;
     border-width: 1px;
+    margin: 10px;
 }
 ul.testimonials{
   list-style-type: circle;

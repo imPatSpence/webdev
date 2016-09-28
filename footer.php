@@ -1,6 +1,6 @@
 <div class="footer">
-		<div id="rectangleFooter">
-			<?php echo "Copyright shit goes here"?>
+		<div id="footerFont">
+			<?php echo "I rock!"?>
 		</div>
 	</div>
 

@@ -11,7 +11,7 @@
 	<div id="rectangle">
 		<img src ="/whitelogo.png" height="125" width="125">
 			<div class="inner">
-				InsertNumberUsers have found a job using Aerial HeadHunters
+				Welcome!
 			</div>
 	</div>
 	<div class="testimonials">
