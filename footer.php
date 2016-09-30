@@ -1,6 +1,6 @@
 <div class="footer">
 		<div id="footerFont">
-			<?php echo "I rock!"?>
+			<?php echo "© Patrick Spence"?>
 		</div>
 	</div>
 

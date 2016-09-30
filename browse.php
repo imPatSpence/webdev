@@ -1,6 +1,6 @@
 <html>
  <head>
-<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+ <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
@@ -18,33 +18,51 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-  <title>Home</title>
+  <title>Browse</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" type="text/css" href="styles/homepage.css">
+	<link rel="stylesheet" type="text/css" href="styles/browse.css">
  </head>
  <body>
 	<?php require_once 'header.php'; ?>
-	<!--<h1> Welcome To Aerial Headhunters</h1> -->
-	
-	<div class="testimonials">
-		<ul class ="testimonials">
-			<testimonialsContent>Testimonials</testimonialsContent>
-			<li>Testimonials</li>
-			<li>Testimonials</li>
-			<li>Testimonials</li>
-			<li>Testimonials</li>
-		</ul>
+
+	<div class = "signupbox">
+		<h3>Browse</h3>
+			<div>
+			<form>
+				<ul class= "signupList">
+
+  				<li><label for="fName">Search by name</label></li>
+  				<input type="text" id="fName" name="fName"></li>
+				</form>
+				</ul>
+				<ul class= "signupList">
+				<li>Search by filter</li>
+				</ul>
+				
+				
+				<input id="option" type="checkbox" name="field" value="option">
+				<label for="option">Value</label>
+				<input id="option" type="checkbox" name="field" value="option">
+				<label for="option">Value</label>
+				<input id="option" type="checkbox" name="field" value="option">
+				<label for="option">Value</label>
+				<input id="option" type="checkbox" name="field" value="option">
+				<label for="option">Value</label>
+				<input id="option" type="checkbox" name="field" value="option">
+				<label for="option">Value</label>
+				<input id="option" type="checkbox" name="field" value="option">
+				<label for="option">Value</label>
+			</div>
+			<button class="button" form="form1" value="Submit">Submit</button>
+			<div class="searchResultContainer">
+			<h1> Results</h1>
+			</div>
+			
 	</div>
 
-	<div class="pictures">
-		<picturesContent>Pictures</picturesContent>
-	</div>
 
-	<div class="footer">
-		<div id="rectangleFooter">
-			<?php require_once 'footer.php'; ?>
-		</div>
-	</div>
+	<?php require_once 'footer.php'; ?>
+
 	
  </body>
 </html>

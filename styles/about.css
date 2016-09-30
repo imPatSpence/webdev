@@ -1,0 +1,12 @@
+div.centerContainer{
+	width: 10%;
+	height:10%;
+	min-height: 50%;
+	min-width: 50%;
+	border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    background-color: lightgrey;
+	margin: auto;
+	margin-top: 5px
+}

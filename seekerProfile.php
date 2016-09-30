@@ -1,6 +1,6 @@
 <html>
  <head>
-<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+ <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
@@ -18,26 +18,28 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-  <title>Home</title>
+  <title>SeekerProfile</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" type="text/css" href="styles/homepage.css">
+	<link rel="stylesheet" type="text/css" href="styles/seekerProfile.css">
  </head>
  <body>
+ 	<div>
+
 	<?php require_once 'header.php'; ?>
 	<!--<h1> Welcome To Aerial Headhunters</h1> -->
-	
-	<div class="testimonials">
-		<ul class ="testimonials">
-			<testimonialsContent>Testimonials</testimonialsContent>
-			<li>Testimonials</li>
-			<li>Testimonials</li>
-			<li>Testimonials</li>
-			<li>Testimonials</li>
-		</ul>
-	</div>
 
-	<div class="pictures">
-		<picturesContent>Pictures</picturesContent>
+	<div class="leftContainer">
+		<div class="name">
+			<name>NAME: INSERT NAME HERE</name>	
+		</div>
+
+
+		<div class="reviews">
+			Stars
+			<br>
+			comments
+		</div>
+
 	</div>
 
 	<div class="footer">
@@ -45,6 +47,8 @@
 			<?php require_once 'footer.php'; ?>
 		</div>
 	</div>
+
+</div>
 	
  </body>
 </html>
