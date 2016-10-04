@@ -1,6 +1,6 @@
 body{
 	margin: 0px;
-	background-color:#ffffff;
+	background-color:#e5e5e5;
 	
 }
 div.toolbarRight{
@@ -22,9 +22,8 @@ img {
 #rectangle {
 	width:max-width;
 	height:200px;
-	background:grey;
-	border-radius: 13px;
-	margin-top:42px 
+	background:#3fb0ac;
+	margin-top:40px 
 }
 a{
 color:white;
@@ -32,7 +31,7 @@ color:white;
 #navBar {
 	width:max-width;
 	height:40px;
-	background:black;
+	background:#183252;
 	opacity: 0.8;
 	position: fixed;
 	left: 0;
@@ -64,13 +63,13 @@ li.toolbar{
 }
 
 .footer {
-	margin-top: 20px;
+  margin-top: 20px;
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: black;
+  background-color: #183252;
   text-align: center;
   }
   

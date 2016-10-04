@@ -23,28 +23,40 @@
 	<link rel="stylesheet" type="text/css" href="styles/homepage.css">
  </head>
  <body>
-	<?php require_once 'header.php'; ?>
+	<?php require_once 'headernorectangle.php'; ?>
+<div>
+
 	<!--<h1> Welcome To Aerial Headhunters</h1> -->
-	
-	<div class="testimonials">
-		<ul class ="testimonials">
-			<testimonialsContent>Testimonials</testimonialsContent>
-			<li>Testimonials</li>
-			<li>Testimonials</li>
-			<li>Testimonials</li>
-			<li>Testimonials</li>
-		</ul>
-	</div>
+	<div class = "slideshow">
 
-	<div class="pictures">
-		<picturesContent>Pictures</picturesContent>
-	</div>
-
-	<div class="footer">
-		<div id="rectangleFooter">
-			<?php require_once 'footer.php'; ?>
+		<div class ="sloganBox">
+			<ul class = "middleFront">
+			<li class= "middleFrontItems">Insert something Witty here</li>
+			<li class = "middleFrontItems"><button class="buttonWhite">Search!</button> <button class="buttonBlue">Signup!</button> </li>
+			</ul>
 		</div>
 	</div>
+
+	<div class ="quoteUnderPicture">
+		AerialHeaderHunters is a better way to find and rent drone pilots.  Heres Why:
+	</div>
+
+	<div>
+		<div class="leftReason">
+			Reason1:
+	</div>
+		<div class="centerReason">
+				Reason1:
+	</div>
+		<div class ="rightReason">
+				Reason1:
+		</div>
+	
+	</div>
+
+</div>
+
+
 	
  </body>
 </html>
