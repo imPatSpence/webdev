@@ -23,10 +23,10 @@
 	<link rel="stylesheet" type="text/css" href="styles/browse.css">
  </head>
  <body>
-	<?php require_once 'header.php'; ?>
+	<?php require_once 'headernorectangle.php'; ?>
 
-	<div class = "signupbox">
-		<h3>Browse</h3>
+	<fieldset class = "searchbox">
+			<legend>Search!</legend>
 			<div>
 			<form>
 				<ul class= "signupList">
@@ -36,7 +36,7 @@
 				</form>
 				</ul>
 				<ul class= "signupList">
-				<li>Search by filter</li>
+				<li>Search by a filter</li>
 				</ul>
 				
 				
@@ -53,10 +53,9 @@
 				<input id="option" type="checkbox" name="field" value="option">
 				<label for="option">Value</label>
 			</div>
-			<button class="button" form="form1" value="Submit">Submit</button>
-			<div class="searchResultContainer">
-			<h1> Results</h1>
+			
 			</div>
+			<button class="button" form="form1" value="Submit">Submit</button>
 			
 	</div>
 

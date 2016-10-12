@@ -7,8 +7,7 @@
 			</div>
 			<div class ="HAB">
 
-				<li class ="toolbar"><a href="about.php">About</a></li>
-				<li class ="toolbar"><a href="browse.php">Browse</a></li>
+				<li class ="toolbar"><a href="browse.php">Search</a></li>
 			</div>
 			<div class ="LS">
 				<li class ="toolbar"><a href="login.php">Login</a></li>
