@@ -23,10 +23,11 @@
 	<link rel="stylesheet" type="text/css" href="styles/login.css">
  </head>
  <body>
-	<?php require_once 'header.php'; ?>
+	<?php require_once 'headernorectangle.php'; ?>
 
-	<div class = "loginBox">
-		<h3>Login!</h3>
+	
+		<fieldset class = "loginbox">
+			<legend>Login!</legend>
 			<form>
 				<ul class= "signupList">
 
@@ -38,7 +39,8 @@
 				<li> Forgot Password?</li>
 			</ul>
 			</form>
-	</div>
+			</fieldset>
+
 
 
 	<?php require_once 'footer.php'; ?>

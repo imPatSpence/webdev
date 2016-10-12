@@ -23,10 +23,10 @@
 	<link rel="stylesheet" type="text/css" href="styles/signup.css">
  </head>
  <body>
-	<?php require_once 'header.php'; ?>
+	<?php require_once 'headernorectangle.php'; ?>
 
-	<div class = "signupbox">
-		<h3>Create a new account!</h3>
+	<<fieldset class = "signupbox">
+			<legend>Create an Account!</legend>
 			<form>
 				<ul class= "signupList">
 
@@ -46,6 +46,7 @@
 				<button class="button" form="form1" value="Submit">Submit</button>
 			</ul>
 			</form>
+		</fieldset>
 	</div>
 
 
