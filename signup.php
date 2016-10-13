@@ -27,7 +27,7 @@
 
 	<<fieldset class = "signupbox">
 			<legend>Create an Account!</legend>
-			<form>
+			<form action ="signup-formHandler.php" method ="POST">
 				<ul class= "signupList">
 
   				<li><label for="fName">First Name</label></li>
@@ -36,14 +36,15 @@
 				<input type="text" id="lName" name="lName">
 				<li><label for="Email">Email:</label></li>
 				<input type="text" id="email" name="email">
+				
 				<li><label for="Username">Username:</label></li>
 				<input type="text" id="Username" name="Username">
+
 				<li><label for="Password">Password:</label></li>
 				<input type="text" id="Password" name="Password">
 				<li><label for="ConfirmPassword">Confirm Password:</label></li>
 				<input type="text" id="ConfirmPassword" name="ConfirmPassword">
-
-				<button class="button" form="form1" value="Submit">Submit</button>
+				<input type = "submit" class= "blueSubmitButton">
 			</ul>
 			</form>
 		</fieldset>

@@ -28,7 +28,7 @@ input[type=text] {
 ul.signupList{
 	list-style: none;
 }
-.button {
+.blueSubmitButton {
     background-color: #183252;
     border: none;
     color: white;
