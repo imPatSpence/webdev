@@ -25,15 +25,15 @@ $_SESSION["fName"] = $fName;
 //$_SESSION["Password"] = $Password;	
 header('Location: signup.php');
 
-	if(isset($_POST["fName"])  && $_POST["fName"] != ""){
-		$fName = $_POST["fName"];
-		echo "fName is set";
-		$_SESSION["fName"] = $Username;
-	}
-	else{
-		$_SESSION["error"] = "Must enter a usernamse!";
-	}
-	}
+//	if(isset($_POST["fName"])  && $_POST["fName"] != ""){
+//		$fName = $_POST["fName"];
+//		echo "fName is set";
+//		$_SESSION["fName"] = $Username;
+//	}
+//	else{
+//		$_SESSION["error"] = "Must enter a usernamse!";
+//	}
+//	}
 
 ?>
 
