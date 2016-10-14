@@ -1,6 +1,10 @@
+<?php 
+	require_once 'headernorectangle.php'; 
+	session_start();
+?>
 <html>
  <head>
- <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
@@ -23,8 +27,9 @@
 	<link rel="stylesheet" type="text/css" href="styles/signup.css">
  </head>
  <body>
-	<?php require_once 'headernorectangle.php'; ?>
 
+	
+	
 	<<fieldset class = "signupbox">
 			<legend>Create an Account!</legend>
 			<form action ="signup-formHandler.php" method ="POST">
@@ -49,7 +54,12 @@
 			</form>
 		</fieldset>
 	</div>
-
+	
+<?php
+	$fName = $_SESSION["fName"] ;
+	echo "First name: " . $fName;
+	echo $_SESSION["error"];
+?> 
 
 	<?php require_once 'footer.php'; ?>
 
