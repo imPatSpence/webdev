@@ -15,14 +15,14 @@ Your ConfirmedPassword is: <?php echo $_POST["ConfirmPassword"]; ?> <br />
 $fName = $_POST["fName"];
 $_SESSION["fName"] = $fName;
 
-$lName = $_POST["lName"];
-$_SESSION["lName"] = $lName;
-$email = $_POST["email"];
-$_SESSION["email"] = $email;
-$Username = $_POST["Username"];
-$_SESSION["Username"] = $Username;
-$Password = $_POST["Password"];
-$_SESSION["Password"] = $Password;	
+//$lName = $_POST["lName"];
+//$_SESSION["lName"] = $lName;
+//$email = $_POST["email"];
+//$_SESSION["email"] = $email;
+//$Username = $_POST["Username"];
+//$_SESSION["Username"] = $Username;
+//$Password = $_POST["Password"];
+//$_SESSION["Password"] = $Password;	
 header('Location: signup.php');
 
 	if(isset($_POST["fName"])  && $_POST["fName"] != ""){
