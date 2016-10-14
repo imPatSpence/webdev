@@ -30,7 +30,7 @@
 
 	
 	
-	<<fieldset class = "signupbox">
+	<fieldset class = "signupbox">
 			<legend>Create an Account!</legend>
 			<form action ="signup-formHandler.php" method ="POST">
 				<ul class= "signupList">

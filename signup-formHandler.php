@@ -23,6 +23,7 @@ $Username = $_POST["Username"];
 $_SESSION["Username"] = $Username;
 $Password = $_POST["Password"];
 $_SESSION["Password"] = $Password;	
+header('Location: signup.php');
 
 	if(isset($_POST["fName"])  && $_POST["fName"] != ""){
 		$fName = $_POST["fName"];
