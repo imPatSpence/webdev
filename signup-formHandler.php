@@ -1,19 +1,8 @@
 <?php
-session_start();
-?>
+session_start(); 
 
-<html>
-<body>
-
-Welcome <?php echo $_POST["fName"]; echo $_POST["lName"]; ?><br />
-Your email address is: <?php echo $_POST["email"]; ?> <br />
-Your username input is: <?php echo $_POST["Username"]; ?> <br />
-You password input is: <?php echo $_POST["Password"]; ?> <br />
-Your ConfirmedPassword is: <?php echo $_POST["ConfirmPassword"]; ?> <br />
-
-<?php 
-$fName = $_POST["fName"];
-$_SESSION["fName"] = $fName;
+// $fName = $_POST["fName"];
+// $_SESSION["fName"] = $fName;
 
 //$lName = $_POST["lName"];
 //$_SESSION["lName"] = $lName;
@@ -23,19 +12,30 @@ $_SESSION["fName"] = $fName;
 //$_SESSION["Username"] = $Username;
 //$Password = $_POST["Password"];
 //$_SESSION["Password"] = $Password;	
-header('Location: signup.php');
 
-//	if(isset($_POST["fName"])  && $_POST["fName"] != ""){
-//		$fName = $_POST["fName"];
-//		echo "fName is set";
-//		$_SESSION["fName"] = $Username;
-//	}
-//	else{
-//		$_SESSION["error"] = "Must enter a usernamse!";
-//	}
-//	}
+
+	//Check first name field
+	if(isset($_POST["fName"])  && $_POST["fName"] != ""){
+		$fName = $_POST["fName"];
+		$_SESSION["fName"] = $fName;
+		unset($_SESSION['errorFirstNameNotEntered']);
+	}
+	else{
+		unset($_SESSION['fName']);
+		$_SESSION["errorFirstNameNotEntered"] = "Error, must enter a firstname!";
+
+	}
+	//check last name field
+	if(isset($_POST["lName"]) && $_POST["lName"] != ""){
+		$lName = $_POST["lName"];
+		$_SESSION["lName"] = $lName;
+		unset($_SESSION['errorLastNameNotEntered']);
+	}
+	else{
+		unset($_SESSION['fName']);
+		$_SESSION["errorLastNameNotEntered"] = "Error, must enter a lastname!";
+	}
+
+	header('Location: signup.php');
 
 ?>
-
-</body>
-</html>

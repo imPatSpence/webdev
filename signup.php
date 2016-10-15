@@ -54,11 +54,18 @@
 			</form>
 		</fieldset>
 	</div>
-	
 <?php
-	$fName = $_SESSION["fName"] ;
-	echo "First name: " . $fName;
-	echo $_SESSION["error"];
+
+	//$fName = $_SESSION["fName"] ;
+		
+	
+		if(isset($_SESSION["errorFirstNameNotEntered"])){
+			echo $_SESSION["errorFirstNameNotEntered"];
+			echo "<br>";
+		}
+		if(isset($_SESSION["errorLastNameNotEntered"])){
+			echo $_SESSION["errorLastNameNotEntered"];
+		}
 ?> 
 
 	<?php require_once 'footer.php'; ?>
