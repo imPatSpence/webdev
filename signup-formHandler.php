@@ -38,9 +38,18 @@ session_start();
 
 	//Check email field
 	if(isset($_POST["email"])  && $_POST["email"] != ""){
-		$email = $_POST["email"];
-		$_SESSION["email"] = $email;
-		unset($_SESSION['errorEmailNotEntered']);
+
+		if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+		     //The email address is valid.
+			$email = $_POST["email"];
+			$_SESSION["email"] = $email;
+			unset($_SESSION['errorEmailNotEntered']);
+		} else{
+		     //The email address is invalid.
+				unset($_SESSION['email']);
+				$_SESSION["errorEmailNotEntered"] = "Enter a valid email address format!";
+		}
+		
 	}
 	else{
 		unset($_SESSION['email']);
