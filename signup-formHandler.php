@@ -22,7 +22,7 @@ session_start();
 	}
 	else{
 		unset($_SESSION['fName']);
-		$_SESSION["errorFirstNameNotEntered"] = "Error, must enter a firstname!";
+		$_SESSION["errorFirstNameNotEntered"] = "Must enter a firstname!";
 
 	}
 	//check last name field
@@ -33,7 +33,7 @@ session_start();
 	}
 	else{
 		unset($_SESSION['lName']);
-		$_SESSION["errorLastNameNotEntered"] = "Error, must enter a lastname!";
+		$_SESSION["errorLastNameNotEntered"] = "Must enter a lastname!";
 	}
 
 	//Check email field
@@ -53,7 +53,7 @@ session_start();
 	}
 	else{
 		unset($_SESSION['email']);
-		$_SESSION["errorEmailNotEntered"] = "Error, must enter an email!";
+		$_SESSION["errorEmailNotEntered"] = "Must enter an email!";
 
 	}
 		//Check username field
@@ -64,7 +64,7 @@ session_start();
 	}
 	else{
 		unset($_SESSION['email']);
-		$_SESSION["UsernameNotEntered"] = "Error, must enter a username!";
+		$_SESSION["UsernameNotEntered"] = "Must enter a username!";
 
 	}
 		//Check password field
@@ -79,7 +79,7 @@ session_start();
 	}
 	else{
 		unset($_SESSION['Password']);
-		$_SESSION["PasswordNotEntered"] = "Error, must enter a password!";
+		$_SESSION["PasswordNotEntered"] = "Must enter a password!";
 
 	}
 		//Check second password field
@@ -91,10 +91,10 @@ session_start();
 	else{
 		unset($_SESSION['ConfirmPassword']);
 		if($_POST["ConfirmPassword"] === ""){
-			$_SESSION["ConfirmPasswordNotEntered"] = "Error, must enter a second password!";
+			$_SESSION["ConfirmPasswordNotEntered"] = "Must enter a second password!";
 		}
 		else{
-			$_SESSION["ConfirmPasswordNotEntered"] = "Error, Passwords must match!";
+			$_SESSION["ConfirmPasswordNotEntered"] = "Passwords must match!";
 		}
 
 	}
