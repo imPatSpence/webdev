@@ -64,14 +64,14 @@
 				<ul class= "signupList">
 
   				<li><label for="fName">First Name</label></li>
-  				<input type="text" id="fName" name="fName" value="<?php if(isset($_SESSION['fName'])){ echo $_SESSION['fName'];}?>">
+  				<input type="text" id="fName" name="fName" value="<?php if(isset($_SESSION['fName'])){ echo htmlentities($_SESSION['fName']);}?>">
  				<li><label for="lName">Last Name</label></li>
-				<input type="text" id="lName" name="lName" value="<?php if(isset($_SESSION['lName'])){ echo $_SESSION['lName'];}?>">
+				<input type="text" id="lName" name="lName" value="<?php if(isset($_SESSION['lName'])){ echo htmlentities($_SESSION['lName']);}?>">
 				<li><label for="Email">Email:</label></li>
-				<input type="text" id="email" name="email" value="<?php if(isset($_SESSION['email'])){ echo $_SESSION['email'];}?>">
+				<input type="text" id="email" name="email" value="<?php if(isset($_SESSION['email'])){ echo htmlentities($_SESSION['email']);}?>">
 				
 				<li><label for="Username">Username:</label></li>
-				<input type="text" id="Username" name="Username" value="<?php if(isset($_SESSION['Username'])){ echo $_SESSION['Username'];}?>">
+				<input type="text" id="Username" name="Username" value="<?php if(isset($_SESSION['Username'])){ echo htmlentities($_SESSION['Username']);}?>">
 
 				<li><label for="Password">Password:</label></li>
 				<input type="password" id="Password" name="Password">
