@@ -1,4 +1,5 @@
 .signupbox{
+    float: center;
     background-color: white;
     margin-top: 5em;
     margin-left: auto;
@@ -17,7 +18,7 @@ legend{
     font-size: 25px;
 }
 
-input[type=text] {
+input[type=text] , input[type="password"] {
     padding: 10px 20px;
     margin: 3px 0;
     box-sizing: border-box;
@@ -42,12 +43,13 @@ ul.signupList{
     margin: 10px;
 
 }
-/*div.error{
-    margin-top: 6em;
-    margin-left: 2em;
-    min-width: 15%;
-    padding: 2em;
-    float: left;
+div.error{
+    padding: 1em;
+    margin: 1em;
+    float: right;
+    border-color: black;
+    border-style: solid;
+    
     background-color: red;
     
-}*/
+}

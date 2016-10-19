@@ -16,8 +16,8 @@ session_start();
 
 	//Check first name field
 	if(isset($_POST["fName"])  && $_POST["fName"] != ""){
-		$fName = $_POST["fName"];
-		$_SESSION["fName"] = $fName;
+		$fName = $_POST['fName'];
+		$_SESSION['fName'] = $fName;
 		unset($_SESSION['errorFirstNameNotEntered']);
 	}
 	else{
@@ -32,9 +32,62 @@ session_start();
 		unset($_SESSION['errorLastNameNotEntered']);
 	}
 	else{
-		unset($_SESSION['fName']);
+		unset($_SESSION['lName']);
 		$_SESSION["errorLastNameNotEntered"] = "Error, must enter a lastname!";
 	}
+
+	//Check email field
+	if(isset($_POST["email"])  && $_POST["email"] != ""){
+		$email = $_POST["email"];
+		$_SESSION["email"] = $email;
+		unset($_SESSION['errorEmailNotEntered']);
+	}
+	else{
+		unset($_SESSION['email']);
+		$_SESSION["errorEmailNotEntered"] = "Error, must enter an email!";
+
+	}
+		//Check username field
+	if(isset($_POST["Username"])  && $_POST["Username"] != ""){
+		$Username = $_POST["Username"];
+		$_SESSION["Username"] = $Username;
+		unset($_SESSION['UsernameNotEntered']);
+	}
+	else{
+		unset($_SESSION['email']);
+		$_SESSION["UsernameNotEntered"] = "Error, must enter a username!";
+
+	}
+		//Check password field
+	if(isset($_POST["Password"])  && $_POST["Password"] != ""){
+		$Password = $_POST["Password"];
+		$_SESSION["Password"] = $Password;
+		unset($_SESSION['PasswordNotEntered']);
+	}
+	else{
+		unset($_SESSION['Password']);
+		$_SESSION["PasswordNotEntered"] = "Error, must enter a password!";
+
+	}
+		//Check second password field
+	if(isset($_POST["ConfirmPassword"])  && $_POST["ConfirmPassword"] != "" && $_POST["ConfirmPassword"] === $_POST["Password"]){
+		$ConfirmPassword = $_POST["ConfirmPassword"];
+		$_SESSION["ConfirmPassword"] = $ConfirmPassword;
+		unset($_SESSION['ConfirmPasswordNotEntered']);
+	}
+	else{
+		unset($_SESSION['ConfirmPassword']);
+		if($_POST["ConfirmPassword"] === ""){
+			$_SESSION["ConfirmPasswordNotEntered"] = "Error, must enter a second password!";
+		}
+		else{
+			$_SESSION["ConfirmPasswordNotEntered"] = "Error, Passwords must match!";
+		}
+
+	}
+
+
+
 
 	header('Location: signup.php');
 

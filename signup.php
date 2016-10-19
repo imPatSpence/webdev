@@ -28,45 +28,71 @@
  </head>
  <body>
 
+
 	
 	
 	<fieldset class = "signupbox">
+
+			<div class = "error">
+					<?php
+					
+
+						
+							if(isset($_SESSION["errorFirstNameNotEntered"])){
+								echo $_SESSION["errorFirstNameNotEntered"];
+								echo "<br>";
+							}
+							if(isset($_SESSION["errorLastNameNotEntered"])){
+								echo $_SESSION["errorLastNameNotEntered"];
+								echo "<br>";
+							}
+							if(isset($_SESSION["errorEmailNotEntered"])){
+								echo $_SESSION["errorEmailNotEntered"];
+								echo "<br>";
+							}
+							if(isset($_SESSION["UsernameNotEntered"])){
+								echo $_SESSION["UsernameNotEntered"];
+								echo "<br>";
+							}
+							if(isset($_SESSION["PasswordNotEntered"])){
+								echo $_SESSION["PasswordNotEntered"];
+								echo "<br>";
+							}
+							if(isset($_SESSION["ConfirmPasswordNotEntered"])){
+								echo $_SESSION["ConfirmPasswordNotEntered"];
+								echo "<br>";
+							}
+					?> 
+			</div>
+
 			<legend>Create an Account!</legend>
 			<form action ="signup-formHandler.php" method ="POST">
 				<ul class= "signupList">
 
   				<li><label for="fName">First Name</label></li>
-  				<input type="text" id="fName" name="fName"></li>
+  				<input type="text" id="fName" name="fName" value="<?php if(isset($_SESSION['fName'])){ echo $_SESSION['fName'];}?>">
  				<li><label for="lName">Last Name</label></li>
-				<input type="text" id="lName" name="lName">
+				<input type="text" id="lName" name="lName" value="<?php if(isset($_SESSION['lName'])){ echo $_SESSION['lName'];}?>">
 				<li><label for="Email">Email:</label></li>
-				<input type="text" id="email" name="email">
+				<input type="text" id="email" name="email" value="<?php if(isset($_SESSION['email'])){ echo $_SESSION['email'];}?>">
 				
 				<li><label for="Username">Username:</label></li>
-				<input type="text" id="Username" name="Username">
+				<input type="text" id="Username" name="Username" value="<?php if(isset($_SESSION['Username'])){ echo $_SESSION['Username'];}?>">
 
 				<li><label for="Password">Password:</label></li>
-				<input type="text" id="Password" name="Password">
+				<input type="password" id="Password" name="Password">
 				<li><label for="ConfirmPassword">Confirm Password:</label></li>
-				<input type="text" id="ConfirmPassword" name="ConfirmPassword">
+				<input type="password" id="ConfirmPassword" name="ConfirmPassword">
 				<input type = "submit" class= "blueSubmitButton">
 			</ul>
-			</form>
-		</fieldset>
-	</div>
-<?php
 
-	//$fName = $_SESSION["fName"] ;
-		
-	
-		if(isset($_SESSION["errorFirstNameNotEntered"])){
-			echo $_SESSION["errorFirstNameNotEntered"];
-			echo "<br>";
-		}
-		if(isset($_SESSION["errorLastNameNotEntered"])){
-			echo $_SESSION["errorLastNameNotEntered"];
-		}
-?> 
+			</form>
+
+		</fieldset>
+
+	</div>
+
+
 
 	<?php require_once 'footer.php'; ?>
 
