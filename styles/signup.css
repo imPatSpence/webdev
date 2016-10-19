@@ -43,7 +43,7 @@ ul.signupList{
     margin: 10px;
 
 }
-div.error{
+.error{
     padding: 1em;
     margin: 1em;
     float: right;
@@ -52,4 +52,7 @@ div.error{
     
     background-color: red;
     
+}
+.error:empty{
+    display: none;
 }

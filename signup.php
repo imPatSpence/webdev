@@ -33,12 +33,7 @@
 	
 	<fieldset class = "signupbox">
 
-			<div class = "error">
-					<?php
-					
-
-						
-							if(isset($_SESSION["errorFirstNameNotEntered"])){
+			<div class = "error"><?php if(isset($_SESSION["errorFirstNameNotEntered"])){
 								echo $_SESSION["errorFirstNameNotEntered"];
 								echo "<br>";
 							}
@@ -62,8 +57,7 @@
 								echo $_SESSION["ConfirmPasswordNotEntered"];
 								echo "<br>";
 							}
-					?> 
-			</div>
+					?></div>
 
 			<legend>Create an Account!</legend>
 			<form action ="signup-formHandler.php" method ="POST">
