@@ -72,6 +72,10 @@ session_start();
 		$Password = $_POST["Password"];
 		$_SESSION["Password"] = $Password;
 		unset($_SESSION['PasswordNotEntered']);
+			//password length must be 8 or greater
+			if(strlen($Password) <= 8){
+				$_SESSION["PasswordNotEntered"] = "Password length must be 8 or greater";
+			}
 	}
 	else{
 		unset($_SESSION['Password']);
