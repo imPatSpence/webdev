@@ -1,4 +1,5 @@
 <?php
+require_once "Dao.php";
 session_start(); 
 
 // $fName = $_POST["fName"];
@@ -20,6 +21,7 @@ session_start();
 		$_SESSION['fName'] = $fName;
 		unset($_SESSION['errorFirstNameNotEntered']);
 	}
+	//Error
 	else{
 		unset($_SESSION['fName']);
 		$_SESSION["errorFirstNameNotEntered"] = "Must enter a firstname!";
@@ -31,6 +33,7 @@ session_start();
 		$_SESSION["lName"] = $lName;
 		unset($_SESSION['errorLastNameNotEntered']);
 	}
+	//Error
 	else{
 		unset($_SESSION['lName']);
 		$_SESSION["errorLastNameNotEntered"] = "Must enter a lastname!";
@@ -38,20 +41,19 @@ session_start();
 
 	//Check email field
 	if(isset($_POST["email"])  && $_POST["email"] != ""){
-
 		if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 		     //The email address is valid.
 			$email = $_POST["email"];
 			$_SESSION["email"] = $email;
 			unset($_SESSION['errorEmailNotEntered']);
 		} else{
-		     //The email address is invalid.
+		     //Error The email address is invalid.
 				unset($_SESSION['email']);
 				$_SESSION["errorEmailNotEntered"] = "Enter a valid email address format!";
-		}
-		
+		}	
 	}
 	else{
+		//Error
 		unset($_SESSION['email']);
 		$_SESSION["errorEmailNotEntered"] = "Must enter an email!";
 
@@ -63,9 +65,9 @@ session_start();
 		unset($_SESSION['UsernameNotEntered']);
 	}
 	else{
+		//Error
 		unset($_SESSION['Username']);
 		$_SESSION["UsernameNotEntered"] = "Must enter a username!";
-
 	}
 		//Check password field
 	if(isset($_POST["Password"])  && $_POST["Password"] != ""){
@@ -98,10 +100,20 @@ session_start();
 		}
 
 	}
-
-
-
-
-	header('Location: signup.php');
+	//If any session errors set, redirect to signup page
+	if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNameNotEntered"]) || isset($_SESSION["errorEmailNotEntered"]) || isset($_SESSION["UsernameNotEntered"]) || isset($_SESSION["PasswordNotEntered"])
+		|| isset($_SESSION["ConfirmPasswordNotEntered"]) ){
+			
+			header('Location: signup.php');
+	}
+	//Signup
+	else{
+		$dao = new dao();
+		
+		if($dao->checkuser($Username)){
+			
+		}
+		
+	}
 
 ?>

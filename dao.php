@@ -1,13 +1,41 @@
 <?php
+// Dao.php
+// class for getting products in MySQL
+class Dao {
 
-session_start();
+  private $host = "localhost";
+  private $db = "aerialheadhunters";
+  private $user = "root";
+  private $pass = "";
 
-$db_host = "localhost";
-$db_name = "aerialheadhunters"
-$db_user = "root";
-$db_password = "root";
+  public function getConnection () {
+    return
+      new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
+          $this->pass);
+  }
 
-mysql_connect($db_host, $db_user, $db_password) or die("MyQL connection error: " . mysql_error());
-mysql_select_db($db_name) or die("MySQL Error: " . mysql_error());
+  public function checkuser ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT username FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+    
+  }
 
+  public function getuser ($username, $password) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT username FROM users WHERE username = :username AND password = :password";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->bindParam(":password", $password);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+  public function createUser($username, $password, $name, $email){
+	 
+	$query = mysql_query("insert into user(student_name, student_email, student_contact, student_address) values ('$username', '$password', '$name', '$email')");
+  }
+}
 ?>
