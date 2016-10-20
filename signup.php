@@ -1,5 +1,5 @@
 <?php 
-	require_once 'headernorectangle.php'; 
+	require_once 'headernorectangle.php';
 	session_start();
 ?>
 <html>
@@ -67,7 +67,7 @@
   				<input type="text" id="fName" name="fName" value="<?php if(isset($_SESSION['fName'])){ echo htmlentities($_SESSION['fName']);}?>">
  				<li><label for="lName">Last Name</label></li>
 				<input type="text" id="lName" name="lName" value="<?php if(isset($_SESSION['lName'])){ echo htmlentities($_SESSION['lName']);}?>">
-				<li><label for="Email">Email:</label></li>
+				<li><label for="email">Email:</label></li>
 				<input type="text" id="email" name="email" value="<?php if(isset($_SESSION['email'])){ echo htmlentities($_SESSION['email']);}?>">
 				
 				<li><label for="Username">Username:</label></li>

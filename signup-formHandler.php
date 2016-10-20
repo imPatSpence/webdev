@@ -63,7 +63,7 @@ session_start();
 		unset($_SESSION['UsernameNotEntered']);
 	}
 	else{
-		unset($_SESSION['email']);
+		unset($_SESSION['Username']);
 		$_SESSION["UsernameNotEntered"] = "Must enter a username!";
 
 	}
