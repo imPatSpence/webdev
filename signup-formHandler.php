@@ -95,7 +95,7 @@ session_start();
 	}
 	//Signup
 	else{
-		$dao = new dao();
+		$Dao = new Dao();
 		
 		if($dao->checkuser($Username)){
 			
