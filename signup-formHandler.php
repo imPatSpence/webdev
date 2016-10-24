@@ -1,19 +1,6 @@
 <?php
-require_once "Dao.php";
+require_once "dao.php";
 session_start(); 
-
-// $fName = $_POST["fName"];
-// $_SESSION["fName"] = $fName;
-
-//$lName = $_POST["lName"];
-//$_SESSION["lName"] = $lName;
-//$email = $_POST["email"];
-//$_SESSION["email"] = $email;
-//$Username = $_POST["Username"];
-//$_SESSION["Username"] = $Username;
-//$Password = $_POST["Password"];
-//$_SESSION["Password"] = $Password;	
-
 
 	//Check first name field
 	if(isset($_POST["fName"])  && $_POST["fName"] != ""){
