@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <div id = "navbar">
 		<ul class="toolbar2">
 			<div class ="companyName">
@@ -12,16 +14,17 @@
 			<?php
 			
 			 echo "<div class =\"LS\">";
-			 //if not set print login and username 
-			 if(!isset($_SESSION["authed-user"])){
+			 //if not logged in print signup and login 
+			 if(!isset($_SESSION["authed_user"])){
 				echo "<li class =\"toolbar\"><a href=\"login.php\">Login</a></li>";
 				echo "<li class =\"toolbar\"><a href=\"signup.php\">Signup</a></li>";
 				echo "</div>" ;
 			}
+			//else print profile edit and logout
 			else{
-				"<li class =\"toolbar\"><a href=\"profile.php\">Profile</a></li>";
-				"<li class =\"toolbar\"><a href=\"profile.php\">Edit</a></li>";
-				"<li class =\"toolbar\"><a href=\"profile.php\">Logout!</a></li>";
+				echo "<li class =\"toolbar\"><a href=\"profile.php\">Profile</a></li>";
+				echo "<li class =\"toolbar\"><a href=\"profile.php\">Edit</a></li>";
+				echo "<li class =\"toolbar\"><a href=\"profile.php\">Logout!</a></li>";
 			}
 			?>
 		</ul>

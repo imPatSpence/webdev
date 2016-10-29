@@ -1,7 +1,7 @@
 <?php
 require_once "dao.php";
 session_start();
-	unset($_SESSION['UsernameTaken']);
+unset($_SESSION['UsernameTaken']);
 	
 	//Check first name field
 	if(isset($_POST["fName"])  && $_POST["fName"] != ""){

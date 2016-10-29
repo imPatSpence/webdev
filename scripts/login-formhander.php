@@ -39,9 +39,8 @@ session_start();
 		if( $db->getConnection() ){
 			$isValid = $db->checkUserAndPass($username, $password);
 		
-			if($isValid){ //valid username and password
-
-				$_SESSION["authed-user"] = "authed";
+			if($isValid){ //valid username and password combination in database
+				$_SESSION["authed_user"] = "authed";
 				header('Location: ../login.php');
 			}
 			else{
