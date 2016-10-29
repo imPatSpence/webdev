@@ -94,13 +94,13 @@ session_start();
 			header('Location: signup.php');
 	}
 	//Signup
-	else{
-		$Dao = new Dao();
+	// else{
+	// 	$Dao = new Dao();
 		
-		if($dao->checkuser($Username)){
+	// 	if($dao->checkuser($Username)){
 			
-		}
+	// 	}
 		
-	}
+	// }
 
 ?>

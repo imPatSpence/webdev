@@ -1,5 +1,6 @@
 <?php 
 	require_once 'headernorectangle.php';
+	require_once "dao.php";
 	session_start();
 ?>
 <html>
@@ -28,7 +29,13 @@
  </head>
  <body>
 
-
+<?php
+//check database connection
+//$dao = new Dao();
+//	if($dao->getConnection()){
+//		echo"sucess";
+//	}
+?>
 	
 	
 	<fieldset class = "signupbox">
