@@ -24,7 +24,7 @@ session_start();
 			else{
 				echo "<li class =\"toolbar\"><a href=\"profile.php\">Profile</a></li>";
 				echo "<li class =\"toolbar\"><a href=\"profile.php\">Edit</a></li>";
-				echo "<li class =\"toolbar\"><a href=\"profile.php\">Logout!</a></li>";
+				echo "<li class =\"toolbar\"><a href=\"logout.php\">Logout!</a></li>";
 			}
 			?>
 		</ul>
