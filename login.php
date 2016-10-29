@@ -28,7 +28,6 @@
 	
 		<fieldset class = "loginbox">
 		
-		
 		<div class = "error"><?php if(isset($_SESSION["usernameNotEntered"])){
 								echo $_SESSION["usernameNotEntered"];
 								echo "<br>";
