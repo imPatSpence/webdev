@@ -64,6 +64,10 @@
 								echo $_SESSION["ConfirmPasswordNotEntered"];
 								echo "<br>";
 							}
+							if(isset($_SESSION["UsernameTaken"])){
+								echo $_SESSION["UsernameTaken"];
+								echo "<br>";
+							}
 					?></div>
 
 			<legend>Create an Account!</legend>

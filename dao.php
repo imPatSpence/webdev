@@ -1,11 +1,13 @@
 <?php
-class Dao {
+class dao {
 
   private $host = "cloud79.hostgator.com";
   private $db = "g2v9q3j1_aerialheadhunters";
   private $user = "g2v9q3j1_Patrick";
   private $pass = "dogfunk19";
 
+  function dao(){
+    }
   public function getConnection () {
     return
       new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
@@ -19,9 +21,22 @@ class Dao {
     $q->bindParam(":username", $username);
     $q->execute();
     return reset($q->fetchAll());
-    
-  }
+  }  
   
+  public function createUser($firstname, $lastname, $email, $username, $password){ 
+	$conn = $this->getConnection();
+	$getQuery = "INSERT INTO users( firstname, lastname, email, username, password ) 
+	VALUES ( :firstname, :lastname, :email, :username, :password )";
+	
+	$query = $conn->PREPARE( $getQuery );
+    $query->EXECUTE([
+	':firstname' => $firstname,
+	':lastname' => $lastname,
+	':email' => $email,
+	':username' => $username,
+	':password' => $password]);
+ }
+ 
 public function getuser ($username, $password) {
     $conn = $this->getConnection();
     $getQuery = "SELECT username FROM users WHERE username = :username AND password = :password";
@@ -31,10 +46,9 @@ public function getuser ($username, $password) {
     $q->execute();
     return reset($q->fetchAll());
   }
-  public function createUser($username, $password, $name, $email){
-	 
-	$query = mysql_query("insert into user(student_name, student_email, student_contact, student_address) values ('$username', '$password', '$name', '$email')");
-  }
+
+
+
 
 
 }

@@ -31,10 +31,10 @@
 			<form>
 				<ul class= "signupList">
 
-  				<li><label for="fName">Username</label></li>
-  				<input type="text" id="fName" name="fName"></li>
- 				<li><label for="lName">Password</label></li>
-				<input type="password" id="lName" name="lName">
+  				<li><label for="username">Username</label></li>
+  				<input type="text" id="username" name="username"></li>
+ 				<li><label for="password">Password</label></li>
+				<input type="password" id="password" name="password">
 				<button class="button" form="form1" value="Submit">Submit</button>
 				<li> Forgot Password?</li>
 			</ul>

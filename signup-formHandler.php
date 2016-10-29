@@ -1,7 +1,8 @@
 <?php
 require_once "dao.php";
-session_start(); 
-
+session_start();
+	unset($_SESSION['UsernameTaken']);
+	
 	//Check first name field
 	if(isset($_POST["fName"])  && $_POST["fName"] != ""){
 		$fName = $_POST['fName'];
@@ -88,19 +89,41 @@ session_start();
 
 	}
 	//If any session errors set, redirect to signup page
-	if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNameNotEntered"]) || isset($_SESSION["errorEmailNotEntered"]) || isset($_SESSION["UsernameNotEntered"]) || isset($_SESSION["PasswordNotEntered"])
+	if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNameNotEntered"]) 
+		|| isset($_SESSION["errorEmailNotEntered"]) || isset($_SESSION["UsernameNotEntered"]) 
+		|| isset($_SESSION["PasswordNotEntered"])
 		|| isset($_SESSION["ConfirmPasswordNotEntered"]) ){
 			
 			header('Location: signup.php');
 	}
 	//Signup
-	// else{
-	// 	$Dao = new Dao();
+	else{
+	 	$db = new dao();
 		
-	// 	if($dao->checkuser($Username)){
+		//if DB has connection
+		if($db->getConnection()){
 			
-	// 	}
-		
-	// }
+			if($db->checkuser($Username)){
+				//echo"username is taken";
+				unset($_SESSION['UsernameTaken']);
+				$_SESSION["UsernameTaken"] = "Username taken!";
+				
+				header('Location: signup.php');
+			}
+			else{
+				
+				//echo"username unique";
+				//creates a user in database
+				$db->createUser($fName, $lName, $email, $Username, $Password);
+				session_unset();
+				header('Location: login.php');
+			}			
+		}
+		else{
+			echo"database not avail";
+		}
+	 	
+	}
+	 
 
 ?>
