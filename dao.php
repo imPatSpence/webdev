@@ -37,7 +37,7 @@ class dao {
 	':password' => $password]);
  }
  
-public function getuser ($username, $password) {
+public function checkUserAndPass ($username, $password) {
     $conn = $this->getConnection();
     $getQuery = "SELECT username FROM users WHERE username = :username AND password = :password";
     $q = $conn->prepare($getQuery);

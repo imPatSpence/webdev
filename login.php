@@ -1,3 +1,8 @@
+<?php 
+	require_once 'headernorectangle.php';
+	require_once "dao.php";
+	session_start();
+?>
 <html>
  <head>
  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -24,12 +29,15 @@
 </head>
 
  <body>
-	<?php require_once 'headernorectangle.php'; ?>
 	
 		<fieldset class = "loginbox">
 		
 		<div class = "error"><?php if(isset($_SESSION["usernameNotEntered"])){
 								echo $_SESSION["usernameNotEntered"];
+								echo "<br>";
+							}
+							if(isset($_SESSION["passwordNotEntered"])){
+								echo $_SESSION["passwordNotEntered"];
 								echo "<br>";
 							}
 					?></div>
