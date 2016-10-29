@@ -27,11 +27,11 @@ input[type=text],[type=password] {
 ul.signupList{
 	list-style: none;
 }
-.button {
+.blueSubmitButton {
     background-color: #183252;
     border: none;
     color: white;
-    padding: 10px 27px;
+    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

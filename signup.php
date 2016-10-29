@@ -29,13 +29,6 @@
  </head>
  <body>
 
-<?php
-//check database connection
-//$dao = new Dao();
-//	if($dao->getConnection()){
-//		echo"sucess";
-//	}
-?>
 	
 	
 	<fieldset class = "signupbox">

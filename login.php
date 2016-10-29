@@ -18,28 +18,37 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-  <title>Login</title>
+  <title>Login!</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/login.css">
- </head>
+</head>
+
  <body>
 	<?php require_once 'headernorectangle.php'; ?>
-
 	
 		<fieldset class = "loginbox">
+		
+		
+		<div class = "error"><?php if(isset($_SESSION["usernameNotEntered"])){
+								echo $_SESSION["usernameNotEntered"];
+								echo "<br>";
+							}
+					?></div>
+					
 			<legend>Login!</legend>
-			<form>
+			<form action ="/scripts/login-formhander.php" method ="POST">
 				<ul class= "signupList">
-
-  				<li><label for="username">Username</label></li>
-  				<input type="text" id="username" name="username"></li>
- 				<li><label for="password">Password</label></li>
-				<input type="password" id="password" name="password">
-				<button class="button" form="form1" value="Submit">Submit</button>
-				<li> Forgot Password?</li>
-			</ul>
+					<li><label for="username">Username</label></li>
+					<input type="text" id="username" name="username"></li>
+					<li><label for="password">Password</label></li>
+					<input type="password" id="password" name="password">
+					<input type = "submit" class ="blueSubmitButton">
+					<li> Forgot Password?</li>
+				</ul>
+				
 			</form>
-			</fieldset>
+			
+		</fieldset>
 
 
 
