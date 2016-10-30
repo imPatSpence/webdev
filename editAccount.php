@@ -1,28 +1,38 @@
+	<?php 
+	require_once 'headernorectangle.php';
+	require_once "dao.php";
+	session_start();
+	?>
 <html>
  <head>
-  <title>Home</title>
+  <title>Edit Account</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/editAccount.css">
  </head>
  <body>
-	<?php require_once 'header.php'; ?>
+	<?php
+	//Must be logged in to see this page
+	if(!isset($_SESSION["authed_user"])){
+		$_SESSION["Unauthorized"] = "Must be logged in to see the previous Page!";
+		header('Location: ../login.php');
+	}
+	?>
 
-	<div class = "loginBox">
-		<h3>Edit Account Information!</h3>
-			<form>
+	<fieldset class = "loginbox">
+	
+		<legend>Edit Account</legend>
+			<form action ="/scripts/editAccount-formhander.php" method ="POST">
 				<ul class= "signupList">
 
-  				<li><label for="fName">Change Email:</label></li>
-  				<input type="text" id="fName" name="fName"></li>
- 				<li><label for="lName">Change Password:</label></li>
-				<input type="password" id="lName" name="lName">
-				<li><label for="lName">Confirm Password:</label></li>
-				<input type="password" id="lName" name="lName">
-				<button class="button" form="form1" value="Submit">Submit</button>
-				<li> Forgot Password?</li>
+ 				<li><label for="password">Change Password:</label></li>
+				<input type="password" id="password" name="password">
+				<li><label for="password2">Confirm Password:</label></li>
+				<input type="password" id="password2" name="password2">
+				<input type = "submit" class ="blueSubmitButton">
 			</ul>
-			</form>
-	</div>
+		</form>
+			
+		</fieldset>
 
 
 	<?php require_once 'footer.php'; ?>

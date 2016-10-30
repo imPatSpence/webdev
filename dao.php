@@ -23,10 +23,10 @@ class dao {
     return reset($q->fetchAll());
   }  
   
-  public function createUser($firstname, $lastname, $email, $username, $password){ 
+  public function createUser($firstname, $lastname, $email, $username, $password, $type){ 
 	$conn = $this->getConnection();
-	$getQuery = "INSERT INTO users( firstname, lastname, email, username, password ) 
-	VALUES ( :firstname, :lastname, :email, :username, :password )";
+	$getQuery = "INSERT INTO users( firstname, lastname, email, username, password, type ) 
+	VALUES ( :firstname, :lastname, :email, :username, :password, :type )";
 	
 	$query = $conn->PREPARE( $getQuery );
     $query->EXECUTE([
@@ -34,7 +34,8 @@ class dao {
 	':lastname' => $lastname,
 	':email' => $email,
 	':username' => $username,
-	':password' => $password]);
+	':password' => $password,
+	':type' => $type]);
  }
  
 public function checkUserAndPass ($username, $password) {
@@ -43,6 +44,14 @@ public function checkUserAndPass ($username, $password) {
     $q = $conn->prepare($getQuery);
     $q->bindParam(":username", $username);
     $q->bindParam(":password", $password);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+ public function getFirstName ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT firstname FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
     $q->execute();
     return reset($q->fetchAll());
   }

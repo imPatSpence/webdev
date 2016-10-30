@@ -1,3 +1,16 @@
+
+<?php
+require_once 'headernorectangle.php';
+require_once "dao.php";
+session_start();
+
+//Must be logged in to see this page
+if(!isset($_SESSION["authed_user"])){
+	$_SESSION["Unauthorized"] = "Must be logged in to see the previous Page!";
+	header('Location: ../login.php');
+	}
+?>
+
 <html>
  <head>
  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -23,8 +36,6 @@
 	<link rel="stylesheet" type="text/css" href="styles/browse.css">
  </head>
  <body>
-	<?php require_once 'headernorectangle.php'; ?>
-
 	<fieldset class = "searchbox">
 			<legend>Search!</legend>
 			<div>

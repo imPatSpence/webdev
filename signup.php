@@ -57,6 +57,10 @@
 								echo $_SESSION["ConfirmPasswordNotEntered"];
 								echo "<br>";
 							}
+							if(isset($_SESSION["TypeNotEntered"])){
+								echo $_SESSION["TypeNotEntered"];
+								echo "<br>";
+							}
 							if(isset($_SESSION["UsernameTaken"])){
 								echo $_SESSION["UsernameTaken"];
 								echo "<br>";
@@ -81,6 +85,10 @@
 				<input type="password" id="Password" name="Password">
 				<li><label for="ConfirmPassword">Confirm Password:</label></li>
 				<input type="password" id="ConfirmPassword" name="ConfirmPassword">
+				<li>What type of profile do you wish to create?
+				<li><label for="Type"> 
+				<input type="radio" name="Type" value="Operator">Operator
+				<input type="radio" name="Type" value="Seeker">Seeker
 				<input type = "submit" class= "blueSubmitButton">
 			</ul>
 

@@ -35,13 +35,27 @@
 		<div class = "error"><?php if(isset($_SESSION["usernameNotEntered"])){
 								echo $_SESSION["usernameNotEntered"];
 								echo "<br>";
+								unset($_SESSION['usernameNotEntered']);
 							}
 							if(isset($_SESSION["passwordNotEntered"])){
 								echo $_SESSION["passwordNotEntered"];
 								echo "<br>";
+								unset($_SESSION['passwordNotEntered']);
+							}
+							if(isset($_SESSION["Unauthorized"])){
+								echo $_SESSION["Unauthorized"];
+								echo "<br>";
+								unset($_SESSION['Unauthorized']);
 							}
 					?></div>
 					
+		<div class = "success"><?php if(isset($_SESSION["CreateSuccess"])){
+								echo $_SESSION["CreateSuccess"];
+								echo "<br>";
+								unset($_SESSION['CreateSuccess']);
+									}
+					?></div>
+			
 			<legend>Login!</legend>
 			<form action ="/scripts/login-formhander.php" method ="POST">
 				<ul class= "signupList">

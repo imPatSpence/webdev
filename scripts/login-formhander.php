@@ -34,7 +34,6 @@ session_start();
 	//entered a username and password... check database
 	else{
 		$db = new dao();
-		
 		//if DB has connection
 		if( $db->getConnection() ){
 			$isValid = $db->checkUserAndPass($username, $password);

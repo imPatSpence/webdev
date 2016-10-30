@@ -88,11 +88,22 @@ unset($_SESSION['UsernameTaken']);
 		}
 
 	}
+	//Check profile type field
+	if(isset($_POST["Type"])  && $_POST["Type"] != ""){
+		$Type = $_POST["Type"];
+		$_SESSION["Type"] = $Type;
+		unset($_SESSION['TypeNotEntered']);
+	}
+	else{
+		//Error
+		unset($_SESSION['Type']);
+		$_SESSION["TypeNotEntered"] = "Must enter a type!";
+	}
 	//If any session errors set, redirect to signup page
 	if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNameNotEntered"]) 
 		|| isset($_SESSION["errorEmailNotEntered"]) || isset($_SESSION["UsernameNotEntered"]) 
 		|| isset($_SESSION["PasswordNotEntered"])
-		|| isset($_SESSION["ConfirmPasswordNotEntered"]) ){
+		|| isset($_SESSION["ConfirmPasswordNotEntered"]) || isset($_SESSION["TypeNotEntered"])){
 			
 			header('Location: signup.php');
 	}
@@ -114,8 +125,9 @@ unset($_SESSION['UsernameTaken']);
 				
 				//echo"username unique";
 				//creates a user in database
-				$db->createUser($fName, $lName, $email, $Username, $Password);
+				$db->createUser($fName, $lName, $email, $Username, $Password,$Type);
 				session_unset();
+				$_SESSION["CreateSuccess"] = "Account Created Successfully!";
 				header('Location: login.php');
 			}			
 		}
