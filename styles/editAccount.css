@@ -41,7 +41,20 @@ ul.signupList{
 .error:empty{
     display: none;
 }
-
+.success{
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
+    float: right;
+    border-color: black;
+    border-style: solid;
+    
+    background-color: #00ff00;
+    
+}
+.success:empty{
+    display: none;
+}
 .blueSubmitButton {
     background-color: #183252;
     border: none;

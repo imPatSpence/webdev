@@ -24,6 +24,11 @@
 	?>
 
 	<fieldset class = "loginbox">
+	<div class = "success"><?php if(isset($_SESSION["ProfileDescriptionUpdated"])){
+								echo $_SESSION["ProfileDescriptionUpdated"];
+								echo "<br>";
+								unset($_SESSION['ProfileDescriptionUpdated']);
+							}?></div>
 	
 		<legend>Edit Account</legend>
 			<form action ="/scripts/editAccount-formhander.php" method ="POST">
