@@ -87,6 +87,14 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return reset($q->fetchAll());
   }
+  public function getUsername ($id) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT username FROM users WHERE id = :id";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":id", $id);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
    public function getDescription ($username) {
     $conn = $this->getConnection();
     $getQuery = "SELECT description FROM users WHERE username = :username";

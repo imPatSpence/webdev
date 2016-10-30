@@ -1,4 +1,10 @@
-<?php require_once 'headernorectangle.php'; ?>
+<?php require_once 'headernorectangle.php'; 
+session_start();
+$db = new dao();
+$id = $_GET['page'];
+$username = $db->getUsername($id);
+$username = $username[0];
+?>
 
 <html>
 <head>
@@ -31,7 +37,7 @@
 	<div>
 
 		<div class="droneNameDisplay">
-			Drone Name:
+			Drone Name: 
 		</div>
 
 		<div class= "slideshow">
@@ -45,8 +51,15 @@
 
 
 		<div class= "DescriptionBox">
+	
 			<button class="blueButton">Description</button> 
 			<button class="blueButton">Reviews</button>
+				
+			<?php  
+			echo $_SESSION["profileUser"];
+			$description = $db->getDescription($username);
+			echo "$description[0]";
+			?>
 		</div>
 
 	</div>
