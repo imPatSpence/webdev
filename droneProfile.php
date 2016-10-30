@@ -1,5 +1,7 @@
+<?php require_once 'headernorectangle.php'; ?>
+
 <html>
- <head>
+<head>
  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
@@ -20,39 +22,34 @@
 
   <title>droneProfile</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" type="text/css" href="styles/droneProfile.css">
+	<link rel="stylesheet" type="text/css" href="/styles/droneProfile2.css">
  </head>
  <body>
  	<div>
 
-	<?php require_once 'header.php'; ?>
-	<!--<h1> Welcome To Aerial Headhunters</h1> -->
+	
+	<div>
 
-	<div class="leftContainer">
-		<div class="name">
-			<name>NAME: INSERT NAME HERE</name>	
-			<br>$COST:
-		</div>
-		<div class="slideshow">
-			<h2>Picture SlideShow</h2>
+		<div class="droneNameDisplay">
+			Drone Name:
 		</div>
 
-		<div class="videoPlayer">
-			<h2>Video Player</h2>		
+		<div class= "slideshow">
+			SLIDESHOW
 		</div>
-		<div class="reviews">
-			Star Reviews
-			<br>
-			comments
+
+		<div class= "rentBox">
+			rent for only 1000000000$!
+			<button class="buttonRent">Rent Now!</button> 
+		</div>
+
+
+		<div class= "DescriptionBox">
+			<button class="blueButton">Description</button> 
+			<button class="blueButton">Reviews</button>
 		</div>
 
 	</div>
-		<div class="qualifications">
-			<picturesContent>Qualifications</picturesContent>
-
-			
-	</div>
-
 
 
 	

@@ -2,6 +2,9 @@
 	require_once 'headernorectangle.php';
 	require_once "dao.php";
 	session_start();
+	$db = new dao();
+	$accountName = $_SESSION["authed_user"];
+	$type = $db->getAccountType($accountName);
 	?>
 <html>
  <head>
@@ -11,6 +14,7 @@
  </head>
  <body>
 	<?php
+	
 	//Must be logged in to see this page
 	if(!isset($_SESSION["authed_user"])){
 		$_SESSION["Unauthorized"] = "Must be logged in to see the previous Page!";
@@ -23,7 +27,7 @@
 		<legend>Edit Account</legend>
 			<form action ="/scripts/editAccount-formhander.php" method ="POST">
 				<ul class= "signupList">
-
+				<li>Account type: <?php echo $type[0]; ?></li><br />
  				<li><label for="password">Change Password:</label></li>
 				<input type="password" id="password" name="password">
 				<li><label for="password2">Confirm Password:</label></li>

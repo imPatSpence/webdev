@@ -55,9 +55,39 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return reset($q->fetchAll());
   }
-
-
-
+  public function getLastName ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT lastname FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+    public function getEmail ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT email FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+   public function getAccountType ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT type FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+   public function getAccountID ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT id FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+  
 
 
 }

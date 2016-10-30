@@ -39,12 +39,14 @@ session_start();
 			$isValid = $db->checkUserAndPass($username, $password);
 		
 			if($isValid){ //valid username and password combination in database
-				$_SESSION["authed_user"] = "authed";
+				$_SESSION["authed_user"] = $username;
 				header('Location: ../login.php');
 			}
+			//Invalid Password
 			else{
 				$_SESSION['invalid'] = " invalid username or password!";
-				echo "invalid user/pass";
+				// echo "invalid user/pass";
+				header('Location: ../login.php');
 			}
 		}
 		else{

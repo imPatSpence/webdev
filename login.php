@@ -47,6 +47,11 @@
 								echo "<br>";
 								unset($_SESSION['Unauthorized']);
 							}
+							if(isset($_SESSION["invalid"])){
+								echo $_SESSION["invalid"];
+								echo "<br>";
+								unset($_SESSION['invalid']);
+							}
 					?></div>
 					
 		<div class = "success"><?php if(isset($_SESSION["CreateSuccess"])){
