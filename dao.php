@@ -87,7 +87,25 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return reset($q->fetchAll());
   }
-  
+   public function getDescription ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT description FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+    public function setDescription ($username, $text) {
+    $conn = $this->getConnection();
+    $saveQuery =
+	"UPDATE users
+	SET description =:text 
+	WHERE username = :username";
+    $q = $conn->prepare($saveQuery);
+	$q->bindParam(":text", $text);
+	$q->bindParam(":username", $username);
+    $q->execute();
+  }
 
 
 }

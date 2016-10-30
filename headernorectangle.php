@@ -2,7 +2,9 @@
 require_once "dao.php";
 session_start();
 
-	
+	$db = new dao();
+	$accountName = $_SESSION["authed_user"];
+	$id = $db->getAccountID($accountName);
 	
 ?>
 <div id = "navbar">
@@ -29,7 +31,7 @@ session_start();
 				//$db = new dao();
 			//	$username = $_SESSION["username"];
 			//	echo "hello, ". $db->getFirstName($username);
-				echo "<li class =\"toolbar\"><a href=\"droneProfile.php\">Profile</a></li>";
+				echo "<li class =\"toolbar\"><a href=\"droneProfile.php?page=$id[0]\">Profile</a></li>";
 				echo "<li class =\"toolbar\"><a href=\"editAccount.php\">Edit</a></li>";
 				echo "<li class =\"toolbar\"><a href=\"logout.php\">Logout!</a></li>";
 			}
