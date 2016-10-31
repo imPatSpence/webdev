@@ -31,7 +31,7 @@
 
 		<div class ="sloganBox">
 			<ul class = "middleFront">
-			<li class= "middleFrontItems">Insert something Witty here</li>
+			<li class= "middleFrontItems">Get ABOVE the competition!</li>
 			<li class = "middleFrontItems"><button class="buttonWhite">Search!</button> <button class="buttonBlue">Signup!</button> </li>
 			</ul>
 		</div>

@@ -6,6 +6,7 @@
 	$accountName = $_SESSION["authed_user"];
 	$type = $db->getAccountType($accountName);
 	$description = $db->getDescription($accountName);
+	$cost = $db->getCost($accountName);
 	?>
 <html>
  <head>
@@ -24,26 +25,38 @@
 	?>
 
 	<fieldset class = "loginbox">
-	<div class = "success"><?php if(isset($_SESSION["ProfileDescriptionUpdated"])){
+	<div class = "success"><?php 
+							if(isset($_SESSION["ProfileDescriptionUpdated"])){
 								echo $_SESSION["ProfileDescriptionUpdated"];
 								echo "<br>";
 								unset($_SESSION['ProfileDescriptionUpdated']);
-							}?></div>
+							}
+							if(isset($_SESSION["costUpdated"])){
+								echo $_SESSION["costUpdated"];
+								echo "<br>";
+								unset($_SESSION['costUpdated']);
+							}
+							?></div>
 	
-		<legend>Edit Account</legend>
+		<legend>Edit <?php echo $type[0]; ?> Account</legend>
 			<form action ="/scripts/editAccount-formhander.php" method ="POST">
 				<ul class= "signupList">
-				<li>Account type: <?php echo $type[0]; ?></li><br />
+			
 				
 				<?php
 				//Operator only options
 				if($type[0] == "Operator"){
+					//cost per hour
+					echo "<li><label for=\"cost\">How much do you charge per hour?</label></li> "; 
+					echo "<input type=\"text\" id=\"cost\" name=\"cost\" value=\"$cost[0]\">";
+
+					//Profile Description
 					echo "<li><label for=\"description\">Write a Profile Description:</label></li>
-					<input type=\"text\" id=\"description\" name=\"description\" value =\"$description[0]\"></li>";
+					<textarea id=\"description\" name=\"description\" rows=\"9\" cols=\"36\">$description[0]</textarea></li>";
 				}
 				//seeker only options
 				else{
-					echo "is seeker";
+					echo "seeker options not implemented yet";
 				}
 				?>
 				

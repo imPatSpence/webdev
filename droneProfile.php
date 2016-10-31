@@ -4,6 +4,8 @@ $db = new dao();
 $id = $_GET['page'];
 $username = $db->getUsername($id);
 $username = $username[0];
+$cost = $db->getCost($username);
+$cost = $cost[0];
 ?>
 
 <html>
@@ -45,7 +47,7 @@ $username = $username[0];
 		</div>
 
 		<div class= "rentBox">
-			rent for only 1000000000$!
+			rent for <?php echo $cost ."$ an hour!"; ?>
 			<button class="buttonRent">Rent Now!</button> 
 		</div>
 
@@ -53,13 +55,14 @@ $username = $username[0];
 		<div class= "DescriptionBox">
 	
 			<button class="blueButton">Description</button> 
-			<button class="blueButton">Reviews</button>
-				
-			<?php  
-			echo $_SESSION["profileUser"];
-			$description = $db->getDescription($username);
-			echo "$description[0]";
-			?>
+
+				<div class ="DescriptionBoxText">
+				<?php  
+					echo $_SESSION["profileUser"];
+					$description = $db->getDescription($username);
+					echo nl2br($description[0]);
+				?>
+			</div>
 		</div>
 
 	</div>

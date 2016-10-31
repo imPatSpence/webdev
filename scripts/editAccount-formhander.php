@@ -4,11 +4,8 @@ session_start();
 $db = new dao();
 $accountName = $_SESSION["authed_user"];
 $description = $db->getDescription($accountName);
+$cost = $db->getCost($accountName);
 
-//Needs to check profile description if one is entered, update database.
-//Needs to check to see if both passwords are same... if they are update database
-
-//Check username field
 
 	if(isset($_POST["description"]) && $_POST["description"] != ""){
 		// if entered description is same as one already in
@@ -20,8 +17,18 @@ $description = $db->getDescription($accountName);
 			$db->setDescription($accountName,$description);
 			$_SESSION["ProfileDescriptionUpdated"] = "Sucessfully updated profile Description!";
 		}
-		
 	}
+	if(isset($_POST["cost"]) && $_POST["cost"] != ""){
+		// if entered cost is same as one already in
+		if($_POST["cost"] == $cost[0]){	
+		}
+		else{
+			$cost = $_POST['cost'];
+			$db->setCost($accountName,$cost);
+			$_SESSION["costUpdated"] = "Sucessfully updated profile cost!";
+		}
+	}
+	
 	header('Location: /../editAccount.php');
 	
 ?>

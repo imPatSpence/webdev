@@ -39,11 +39,12 @@ if(!isset($_SESSION["authed_user"])){
 	<fieldset class = "searchbox">
 			<legend>Search!</legend>
 			<div>
-			<form>
+			<form action ="/scripts/browse-formhander.php" method ="POST">
 				<ul class= "signupList">
 
-  				<li><label for="fName">Search by name</label></li>
+  				<li><label for="fName">Search by first name</label></li>
   				<input type="text" id="fName" name="fName"></li>
+  				<input type = "submit" class ="button">
 				</form>
 				</ul>
 				<ul class= "signupList">
@@ -64,9 +65,9 @@ if(!isset($_SESSION["authed_user"])){
 				<input id="option" type="checkbox" name="field" value="option">
 				<label for="option">Value</label>
 			</div>
-			
 			</div>
-			<button class="button" form="form1" value="Submit">Submit</button>
+			
+			
 			
 	</div>
 

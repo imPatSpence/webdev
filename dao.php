@@ -103,7 +103,7 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return reset($q->fetchAll());
   }
-    public function setDescription ($username, $text) {
+  public function setDescription ($username, $text) {
     $conn = $this->getConnection();
     $saveQuery =
 	"UPDATE users
@@ -112,6 +112,27 @@ public function checkUserAndPass ($username, $password) {
     $q = $conn->prepare($saveQuery);
 	$q->bindParam(":text", $text);
 	$q->bindParam(":username", $username);
+    $q->execute();
+  }
+
+  public function getCost ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT cost FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+
+  public function setCost ($username, $cost) {
+    $conn = $this->getConnection();
+    $saveQuery =
+    "UPDATE users
+    SET cost =:cost 
+    WHERE username = :username";
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":cost", $cost);
+    $q->bindParam(":username", $username);
     $q->execute();
   }
 
