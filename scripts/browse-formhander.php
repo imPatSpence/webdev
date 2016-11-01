@@ -7,7 +7,8 @@ $db = new dao();
 //makes sure there is a name
 if(isset($_POST["fName"]) && $_POST["fName"] != ""){
 	$firstname = $_POST["fName"];
-		header('Location: /../browse.php?='.$firstname);
+	$_SESSION["browseDisplay"];
+	header('Location: /../browse.php?firstnames='.$firstname);
 	}
 //redirect to browse page 
 else{

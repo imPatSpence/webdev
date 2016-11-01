@@ -136,6 +136,15 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
   }
 
+  public function browseFirstName($firstname){
+    $conn = $this->getConnection();
+    $getQuery = "SELECT id FROM users WHERE firstname = :firstname";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":firstname", $firstname);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+
 
 }
 ?>

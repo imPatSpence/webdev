@@ -1,19 +1,26 @@
 
 <?php
-require_once 'headernorectangle.php';
-require_once "dao.php";
-session_start();
 
 //Must be logged in to see this page
 if(!isset($_SESSION["authed_user"])){
 	$_SESSION["Unauthorized"] = "Must be logged in to see the previous Page!";
 	header('Location: ../login.php');
-	}
+}
+
+
+require_once 'headernorectangle.php';
+require_once "dao.php";
+session_start();
+$db = new dao();
+$firstnameSearched = $_GET['firstnames'];
+
+
 ?>
 
 <html>
+
  <head>
- <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
@@ -50,8 +57,7 @@ if(!isset($_SESSION["authed_user"])){
 				<ul class= "signupList">
 				<li>Search by a filter</li>
 				</ul>
-				
-				
+						
 				<input id="option" type="checkbox" name="field" value="option">
 				<label for="option">Value</label>
 				<input id="option" type="checkbox" name="field" value="option">
@@ -66,6 +72,49 @@ if(!isset($_SESSION["authed_user"])){
 				<label for="option">Value</label>
 			</div>
 			</div>
+				<?php
+				//Arraylist of IDs that share the same first name
+				$fNameID = $db->browseFirstName($firstnameSearched);
+				//username that corresponds with id
+				//$username = $db->getUsername($fNameID[0]);
+				//$firstname = $db->getFirstName($username[0]);
+				
+				
+				echo "<table style=\"width:100%\">";
+				echo "<tr>";
+				echo "<th>First Name</th>";
+				echo "<th>Last Name</th>";
+				echo "<th>Type of Work</th>";
+				echo "<th>Drone Type</th>";
+				echo "<th>Cost $/hr</th>";
+				echo "</tr>";
+
+				
+				echo "<tr>";
+
+				// echo "<td>".$db->getFirstName($username[0])[0]."</td>";
+				// echo "<td>".$db->getLastName($username[0])[0]."</td>";
+				// echo "<td></td>";
+				// echo "<td></td>";
+				// echo "<td>".$db->getCost($username[0])[0]. "</td>";
+							
+				// echo "</tr>";	
+
+				//echo var_dump($fNameID);
+
+				foreach ($fNameID as $value ){ 
+				//Values should be each ID returned
+				//$username = $db->getUsername($fNameID[0]);
+				echo "<tr>";
+				// echo "<td>".$db->getFirstName($username[0])[0]."</td>";
+				// echo "<td>".$db->getLastName($username[0])[0]."</td>";
+				echo "<td></td>";
+				echo "<td></td>";
+				// echo "<td>".$db->getCost($username[0])[0]. "</td>";
+							
+				echo "</tr>";	
+				}
+				?>
 			
 			
 			
