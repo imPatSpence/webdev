@@ -142,7 +142,7 @@ public function checkUserAndPass ($username, $password) {
     $q = $conn->prepare($getQuery);
     $q->bindParam(":firstname", $firstname);
     $q->execute();
-    return reset($q->fetchAll());
+    return $q->fetchAll();
   }
 
 

@@ -73,7 +73,7 @@ $firstnameSearched = $_GET['firstnames'];
 			</div>
 			</div>
 				<?php
-				//Arraylist of IDs that share the same first name
+				//Array of IDs that share the same first name
 				$fNameID = $db->browseFirstName($firstnameSearched);
 				//username that corresponds with id
 				//$username = $db->getUsername($fNameID[0]);
@@ -100,14 +100,14 @@ $firstnameSearched = $_GET['firstnames'];
 							
 				// echo "</tr>";	
 
-				//echo var_dump($fNameID);
+				
 
 				foreach ($fNameID as $value ){ 
 				//Values should be each ID returned
-				//$username = $db->getUsername($fNameID[0]);
+				$username = $db->getUsername($value[0]);
 				echo "<tr>";
-				// echo "<td>".$db->getFirstName($username[0])[0]."</td>";
-				// echo "<td>".$db->getLastName($username[0])[0]."</td>";
+				echo "<td>".$db->getFirstName($username[0])[0]."</td>";
+				echo "<td>".$db->getLastName($username[0])[0]."</td>";
 				echo "<td></td>";
 				echo "<td></td>";
 				// echo "<td>".$db->getCost($username[0])[0]. "</td>";
