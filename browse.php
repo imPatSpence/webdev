@@ -1,11 +1,6 @@
 
 <?php
 
-//Must be logged in to see this page
-if(!isset($_SESSION["authed_user"])){
-	$_SESSION["Unauthorized"] = "Must be logged in to see the previous Page!";
-	header('Location: ../login.php');
-}
 
 
 require_once 'headernorectangle.php';
@@ -14,7 +9,11 @@ session_start();
 $db = new dao();
 $firstnameSearched = $_GET['firstnames'];
 
-
+//Must be logged in to see this page
+if(!isset($_SESSION["authed_user"])){
+	$_SESSION["Unauthorized"] = "Must be logged in to see the previous Page!";
+	header('Location: ../login.php');
+}
 ?>
 
 <html>
