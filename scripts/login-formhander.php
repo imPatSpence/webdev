@@ -40,7 +40,7 @@ session_start();
 		
 			if($isValid){ //valid username and password combination in database
 				$_SESSION["authed_user"] = $username;
-				header('Location: ../login.php');
+				header('Location: ../editAccount.php');
 			}
 			//Invalid Password
 			else{

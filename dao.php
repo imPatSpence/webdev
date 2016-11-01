@@ -135,10 +135,21 @@ public function checkUserAndPass ($username, $password) {
     $q->bindParam(":username", $username);
     $q->execute();
   }
+  public function setDroneUse ($username, $droneUse) {
+    $conn = $this->getConnection();
+    $saveQuery =
+    "UPDATE users
+    SET typeofwork =:droneUse 
+    WHERE username = :username";
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":droneUse", $droneUse);
+    $q->bindParam(":username", $username);
+    $q->execute();
+  }
 
   public function browseFirstName($firstname){
     $conn = $this->getConnection();
-    $getQuery = "SELECT id FROM users WHERE firstname = :firstname";
+    $getQuery = "SELECT id, firstname,typeofwork, lastname, cost FROM users WHERE firstname = :firstname";
     $q = $conn->prepare($getQuery);
     $q->bindParam(":firstname", $firstname);
     $q->execute();

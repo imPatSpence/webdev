@@ -53,6 +53,26 @@
 					//Profile Description
 					echo "<li><label for=\"description\">Write a Profile Description:</label></li>
 					<textarea id=\"description\" name=\"description\" rows=\"9\" cols=\"36\">$description[0]</textarea></li>";
+					echo"<br>";
+					echo"Type of drone: </br>";
+					echo"<select name=\"droneType\" id=\"dronetype\"> ";
+				
+					echo "<option value=\"1\">1</option>";
+ 					echo "<option value=\"2\">2</option>";
+ 					echo "<option value=\"3\">3</option>";
+ 					echo "<option value=\"4\">4</option>";
+					echo "</select>";
+
+					echo"<br>";
+					echo"Type of work: </br>";
+					echo"<select name=\"droneUse\" id=\"doneUse\"> ";
+				
+					echo '<option value="Real Estate">Real Estate</option>';
+ 					echo "<option value=\"Photography\">Photography</option>";
+ 					echo "<option value=\"Military\">Military</option>";
+ 					echo "<option value=\"volvo\">Volvo</option>";
+					echo "</select>";
+  
 				}
 				//seeker only options
 				else{
@@ -60,10 +80,7 @@
 				}
 				?>
 				
- 				<li><label for="password">Change Password:</label></li>
-				<input type="password" id="password" name="password">
-				<li><label for="password2">Confirm Password:</label></li>
-				<input type="password" id="password2" name="password2">
+ 				<li><a class="password" href="/changePassword.php">Change Password</a>
 				<input type = "submit" class ="blueSubmitButton">
 			</ul>
 		</form>

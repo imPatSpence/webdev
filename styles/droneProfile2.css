@@ -38,7 +38,7 @@ div.DescriptionBox{
 	margin-left: 4em;
 	margin-right: 4em;
 	margin-top: 2em;
-	min-height: 15%;
+	min-height: auto;
 	min-width: 25%;
 	max-height: 15%;
 	padding-bottom: 15em;

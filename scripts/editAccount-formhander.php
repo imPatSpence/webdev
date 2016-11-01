@@ -28,7 +28,17 @@ $cost = $db->getCost($accountName);
 			$_SESSION["costUpdated"] = "Sucessfully updated profile cost!";
 		}
 	}
-	
+	if(isset($_POST["droneUse"]) && $_POST["droneUse"] != ""){
+		// if entered cost is same as one already in
+		if($_POST["droneUse"] == $cost[0]){	
+		}
+		else{
+			$cost = $_POST['droneUse'];
+			$db->setDroneUse($accountName,$cost);
+			$_SESSION["droneUseUpdated"] = "Sucessfully updated drone use!";
+		}
+	}
+
 	header('Location: /../editAccount.php');
 	
 ?>

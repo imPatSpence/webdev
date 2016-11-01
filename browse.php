@@ -105,11 +105,12 @@ if(!isset($_SESSION["authed_user"])){
 				//Values should be each ID returned
 				$username = $db->getUsername($value[0]);
 				echo "<tr>";
-				echo "<td>".$db->getFirstName($username[0])[0]."</td>";
-				echo "<td>".$db->getLastName($username[0])[0]."</td>";
+
+				echo "<td>".$value['firstname']."</td>";
+				echo "<td>".$value['lastname']."</td>";
+				echo "<td>".$value['typeofwork']."</td>";
 				echo "<td></td>";
-				echo "<td></td>";
-				// echo "<td>".$db->getCost($username[0])[0]. "</td>";
+				echo "<td>".$value['cost']."</td>";
 							
 				echo "</tr>";	
 				}

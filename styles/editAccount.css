@@ -55,6 +55,9 @@ ul.signupList{
 .success:empty{
     display: none;
 }
+a.password{
+    color: blue;
+}
 .blueSubmitButton {
     background-color: #183252;
     border: none;
