@@ -5,7 +5,8 @@ $db = new dao();
 $accountName = $_SESSION["authed_user"];
 $description = $db->getDescription($accountName);
 $cost = $db->getCost($accountName);
-
+$currTypeDrone = $db->getDroneType($accountName);
+$currTypeWork = $db->getDroneUse($accountName);
 
 	if(isset($_POST["description"]) && $_POST["description"] != ""){
 		// if entered description is same as one already in
@@ -29,13 +30,23 @@ $cost = $db->getCost($accountName);
 		}
 	}
 	if(isset($_POST["droneUse"]) && $_POST["droneUse"] != ""){
-		// if entered cost is same as one already in
-		if($_POST["droneUse"] == $cost[0]){	
+		
+		if($_POST["droneUse"] == $currTypeWork[0]){	
 		}
 		else{
 			$cost = $_POST['droneUse'];
 			$db->setDroneUse($accountName,$cost);
 			$_SESSION["droneUseUpdated"] = "Sucessfully updated drone use!";
+		}
+	}
+	if(isset($_POST["droneType"]) && $_POST["droneType"] != ""){
+		
+		if($_POST["droneType"] == $currTypeDrone[0]){	
+		}
+		else{
+			$cost = $_POST['droneType'];
+			$db->setDroneType($accountName,$cost);
+			$_SESSION["droneTypeUpdated"] = "Sucessfully updated drone type!";
 		}
 	}
 

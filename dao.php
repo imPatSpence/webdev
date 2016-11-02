@@ -123,7 +123,25 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return reset($q->fetchAll());
   }
+  
+    public function getDroneType ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT dronetype FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
 
+    public function getDroneUse ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT typeofwork FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+  
   public function setCost ($username, $cost) {
     $conn = $this->getConnection();
     $saveQuery =
@@ -146,10 +164,22 @@ public function checkUserAndPass ($username, $password) {
     $q->bindParam(":username", $username);
     $q->execute();
   }
+   public function setDroneType($username, $droneType) {
+    $conn = $this->getConnection();
+    $saveQuery =
+    "UPDATE users
+    SET dronetype =:droneType 
+    WHERE username = :username";
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":droneType", $droneType);
+    $q->bindParam(":username", $username);
+    $q->execute();
+  }
+
 
   public function browseFirstName($firstname){
     $conn = $this->getConnection();
-    $getQuery = "SELECT id, firstname,typeofwork, lastname, cost FROM users WHERE firstname = :firstname";
+    $getQuery = "SELECT id, firstname,typeofwork, lastname, cost, dronetype FROM users WHERE firstname = :firstname";
     $q = $conn->prepare($getQuery);
     $q->bindParam(":firstname", $firstname);
     $q->execute();

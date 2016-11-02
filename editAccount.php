@@ -7,6 +7,8 @@
 	$type = $db->getAccountType($accountName);
 	$description = $db->getDescription($accountName);
 	$cost = $db->getCost($accountName);
+	$droneType = $db->getDroneType($accountName);
+	$droneUse = $db->getDroneUse($accountName);
 	?>
 <html>
  <head>
@@ -36,6 +38,16 @@
 								echo "<br>";
 								unset($_SESSION['costUpdated']);
 							}
+							if(isset($_SESSION["droneUseUpdated"])){
+								echo $_SESSION["droneUseUpdated"];
+								echo "<br>";
+								unset($_SESSION['droneUseUpdated']);
+							}
+							if(isset($_SESSION["droneTypeUpdated"])){
+								echo $_SESSION["droneTypeUpdated"];
+								echo "<br>";
+								unset($_SESSION['droneTypeUpdated']);
+							}
 							?></div>
 	
 		<legend>Edit <?php echo $type[0]; ?> Account</legend>
@@ -46,6 +58,7 @@
 				<?php
 				//Operator only options
 				if($type[0] == "Operator"){
+				
 					//cost per hour
 					echo "<li><label for=\"cost\">How much do you charge per hour?</label></li> "; 
 					echo "<input type=\"text\" id=\"cost\" name=\"cost\" value=\"$cost[0]\">";
@@ -54,23 +67,23 @@
 					echo "<li><label for=\"description\">Write a Profile Description:</label></li>
 					<textarea id=\"description\" name=\"description\" rows=\"9\" cols=\"36\">$description[0]</textarea></li>";
 					echo"<br>";
-					echo"Type of drone: </br>";
+					
+					echo"Type of drone: $droneType[0]</br>";
+
 					echo"<select name=\"droneType\" id=\"dronetype\"> ";
-				
-					echo "<option value=\"1\">1</option>";
- 					echo "<option value=\"2\">2</option>";
- 					echo "<option value=\"3\">3</option>";
- 					echo "<option value=\"4\">4</option>";
+					echo '<option selected disabled ">Select</option>';
+					echo '<option value="Quadracopter">Quadracopter</option>';
+ 					echo '<option value="Fixed wing">Fixed Wing</option>';
 					echo "</select>";
 
 					echo"<br>";
-					echo"Type of work: </br>";
+					echo"Type of work: $droneUse[0] </br>";
 					echo"<select name=\"droneUse\" id=\"doneUse\"> ";
-				
+					echo '<option selected disabled ">Select</option>';
 					echo '<option value="Real Estate">Real Estate</option>';
  					echo "<option value=\"Photography\">Photography</option>";
  					echo "<option value=\"Military\">Military</option>";
- 					echo "<option value=\"volvo\">Volvo</option>";
+ 				//	echo "<option value=\"volvo\">Volvo</option>";
 					echo "</select>";
   
 				}

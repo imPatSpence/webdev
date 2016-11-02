@@ -109,7 +109,7 @@ if(!isset($_SESSION["authed_user"])){
 				echo "<td>".$value['firstname']."</td>";
 				echo "<td>".$value['lastname']."</td>";
 				echo "<td>".$value['typeofwork']."</td>";
-				echo "<td></td>";
+				echo "<td>".$value['dronetype']."</td>";
 				echo "<td>".$value['cost']."</td>";
 							
 				echo "</tr>";	
