@@ -106,7 +106,7 @@ if(!isset($_SESSION["authed_user"])){
 				$username = $db->getUsername($value[0]);
 				echo "<tr>";
 
-				echo "<td>".$value['firstname']."</td>";
+				echo "<td> <a href= \" droneProfile.php?page=".$value['id'] ." \" class=\"browselink\"> " . $value['firstname'] . "</td>";
 				echo "<td>".$value['lastname']."</td>";
 				echo "<td>".$value['typeofwork']."</td>";
 				echo "<td>".$value['dronetype']."</td>";

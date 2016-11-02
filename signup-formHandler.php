@@ -125,6 +125,7 @@ unset($_SESSION['UsernameTaken']);
 				
 				//echo"username unique";
 				//creates a user in database
+				$Password = md5($Password);
 				$db->createUser($fName, $lName, $email, $Username, $Password,$Type);
 				session_unset();
 				$_SESSION["CreateSuccess"] = "Account Created Successfully!";

@@ -36,6 +36,7 @@ session_start();
 		$db = new dao();
 		//if DB has connection
 		if( $db->getConnection() ){
+			$password = md5($password);
 			$isValid = $db->checkUserAndPass($username, $password);
 		
 			if($isValid){ //valid username and password combination in database

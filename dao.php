@@ -141,6 +141,15 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return reset($q->fetchAll());
   }
+    public function getPassword ($username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT password FROM users WHERE username = :username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":username", $username);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+
   
   public function setCost ($username, $cost) {
     $conn = $this->getConnection();
@@ -175,7 +184,17 @@ public function checkUserAndPass ($username, $password) {
     $q->bindParam(":username", $username);
     $q->execute();
   }
-
+  public function setPassword($username, $password) {
+    $conn = $this->getConnection();
+    $saveQuery =
+    "UPDATE users
+    SET password =:password 
+    WHERE username = :username";
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":password", $password);
+    $q->bindParam(":username", $username);
+    $q->execute();
+  }
 
   public function browseFirstName($firstname){
     $conn = $this->getConnection();

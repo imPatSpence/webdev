@@ -32,16 +32,28 @@
 								unset($_SESSION['ProfileDescriptionUpdated']);
 							}
 							?></div>
+
+	<div class = "error"><?php if(isset($_SESSION["needTwoPasswords"])){
+								echo $_SESSION["needTwoPasswords"];
+								echo "<br>";
+								unset($_SESSION['needTwoPasswords']);
+							}
+							if(isset($_SESSION["wrongCurrentPassword"])){
+								echo $_SESSION["wrongCurrentPassword"];
+								echo "<br>";
+								unset($_SESSION['wrongCurrentPassword']);
+							}
+							?></div>
 		<legend>Change <?php echo $type[0]; ?> Account Password</legend>
-			<form action ="/scripts/editAccount-formhander.php" method ="POST">
+			<form action ="/scripts/changePassword-formhander.php" method ="POST">
 				<ul class= "signupList">
 
 				<li><label for="currentPassword">Current Password:</label></li>
 				<input type="password" id="currentPassword" name="currentPassword">
- 				<li><label for="password">Change Password:</label></li>
-				<input type="password" id="password" name="password">
-				<li><label for="password2">Confirm Password:</label></li>
-				<input type="password" id="password2" name="password2">
+ 				<li><label for="newpassword">Change Password:</label></li>
+				<input type="password" id="newpassword" name="newpassword">
+				<li><label for="newpassword2">Confirm Password:</label></li>
+				<input type="password" id="newpassword2" name="newpassword2">
 				<input type = "submit" class ="blueSubmitButton">
 			</ul>
 		</form>

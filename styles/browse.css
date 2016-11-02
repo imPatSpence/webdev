@@ -44,6 +44,13 @@ ul.signupList{
     margin: 10px;
 
 }
+
+a.browselink { 
+
+color:blue;
+
+}
+
 div.searchResultContainer{
 	width: 10%;
 	height:10%;

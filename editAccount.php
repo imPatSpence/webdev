@@ -48,6 +48,11 @@
 								echo "<br>";
 								unset($_SESSION['droneTypeUpdated']);
 							}
+							if(isset($_SESSION["passwordUpdated"])){
+								echo $_SESSION["passwordUpdated"];
+								echo "<br>";
+								unset($_SESSION['passwordUpdated']);
+							}
 							?></div>
 	
 		<legend>Edit <?php echo $type[0]; ?> Account</legend>
