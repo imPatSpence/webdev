@@ -57,7 +57,7 @@ if(!isset($_SESSION["authed_user"])){
 				<li>Search by a filter</li>
 				</ul>
 						
-				<input id="option" type="checkbox" name="field" value="option">
+			<!-- 	<input id="option" type="checkbox" name="field" value="option">
 				<label for="option">Value</label>
 				<input id="option" type="checkbox" name="field" value="option">
 				<label for="option">Value</label>
@@ -68,7 +68,7 @@ if(!isset($_SESSION["authed_user"])){
 				<input id="option" type="checkbox" name="field" value="option">
 				<label for="option">Value</label>
 				<input id="option" type="checkbox" name="field" value="option">
-				<label for="option">Value</label>
+				<label for="option">Value</label> -->
 			</div>
 			</div>
 				<?php

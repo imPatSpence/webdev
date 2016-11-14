@@ -62,9 +62,9 @@ unset($_SESSION['UsernameTaken']);
 		$Password = $_POST["Password"];
 		$_SESSION["Password"] = $Password;
 		unset($_SESSION['PasswordNotEntered']);
-			//password length must be 8 or greater
-			if(strlen($Password) <= 8){
-				$_SESSION["PasswordNotEntered"] = "Password length must be 8 or greater";
+			//password length must be 8 or greater 
+			if(!preg_match('/^[\w\d]{8,16}$/',$Password)){
+				$_SESSION["PasswordNotEntered"] = "Password Must be between 8-16 chars";
 			}
 	}
 	else{
@@ -125,7 +125,7 @@ unset($_SESSION['UsernameTaken']);
 				
 				//echo"username unique";
 				//creates a user in database
-				$Password = md5($Password);
+				$Password = hash("sha256", "$Password" . "coolhash");
 				$db->createUser($fName, $lName, $email, $Username, $Password,$Type);
 				session_unset();
 				$_SESSION["CreateSuccess"] = "Account Created Successfully!";

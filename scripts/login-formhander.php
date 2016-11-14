@@ -36,7 +36,7 @@ session_start();
 		$db = new dao();
 		//if DB has connection
 		if( $db->getConnection() ){
-			$password = md5($password);
+			$password = hash("sha256", "$password" . "coolhash");
 			$isValid = $db->checkUserAndPass($username, $password);
 		
 			if($isValid){ //valid username and password combination in database
@@ -46,7 +46,7 @@ session_start();
 			//Invalid Password
 			else{
 				$_SESSION['invalid'] = " invalid username or password!";
-				// echo "invalid user/pass";
+				 // echo "$password";
 				header('Location: ../login.php');
 			}
 		}
