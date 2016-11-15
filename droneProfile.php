@@ -39,18 +39,22 @@ $cost = $cost[0];
 	<div>
 
 		<div class="droneNameDisplay">
-			Drone Name: 
+			<?php echo'Name: '. $db->getFirstName($username)[0] ." ". $db->getLastName($username)[0] ."<br>";
+			echo'Contact Information:';
+			echo'Email: ' . $db->getEmail($username)[0] ."<br>";
+			echo'cost :' . $cost ."$ an hour!"; 			
+			?> 
 		</div>
 
 		<div class= "slideshow">
 			SLIDESHOW
 		</div>
 
-		<div class= "rentBox">
-			rent for <?php echo $cost ."$ an hour!"; ?>
+	<!--	<div class= "rentBox">
+		
 			<button class="buttonRent">Rent Now!</button> 
 		</div>
-
+		-->
 
 		<div class= "DescriptionBox">
 	
