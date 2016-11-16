@@ -30,7 +30,7 @@ $cost = $cost[0];
 
   <title>droneProfile</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" type="text/css" href="/styles/droneProfile2.css">
+	<link rel="stylesheet" type="text/css" href="styles/droneProfile2.css">
  </head>
  <body>
  	<div>
@@ -42,7 +42,7 @@ $cost = $cost[0];
 			<?php echo'Name: '. $db->getFirstName($username)[0] ." ". $db->getLastName($username)[0] ."<br>";
 			echo'Contact Information:';
 			echo'Email: ' . $db->getEmail($username)[0] ."<br>";
-			echo'cost :' . $cost ."$ an hour!"; 			
+			echo'Charges ' . $cost ."$ an hour!"; 			
 			?> 
 		</div>
 
@@ -50,11 +50,7 @@ $cost = $cost[0];
 			SLIDESHOW
 		</div>
 
-	<!--	<div class= "rentBox">
 		
-			<button class="buttonRent">Rent Now!</button> 
-		</div>
-		-->
 
 		<div class= "DescriptionBox">
 	
@@ -62,12 +58,34 @@ $cost = $cost[0];
 
 				<div class ="DescriptionBoxText">
 				<?php  
-					echo $_SESSION["profileUser"];
+					//echo $_SESSION["profileUser"];
 					$description = $db->getDescription($username);
 					echo nl2br($description[0]);
 				?>
 			</div>
 		</div>
+		
+		<div class= "reviewBox">
+		
+			<!--<button class="blueButton">Comments</button>  -->
+			<br>
+			Write a comment: <br>
+			<form action ="/scripts/addComment-formhander.php" method ="POST">
+					<input type="hidden" name="forProfile" value="<?php echo $id; ?>">
+					<textarea id="comment" name="comment" rows="9" cols="36"></textarea></li>
+					<input type = "submit" class ="blueSubmitButton">
+			</form>
+			Past comments:
+			<?php 
+			$comments = $db->getComments($id);
+	
+			foreach ($comments as $comment ){
+				echo '<br>';
+				echo $comment[0];
+			}
+			?>
+		</div>
+		
 
 	</div>
 

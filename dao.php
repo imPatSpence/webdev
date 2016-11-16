@@ -204,6 +204,25 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return $q->fetchAll();
   }
+  
+    public function setComment($fromAccountID, $forUserID, $commentText) {
+	$conn = $this->getConnection();
+	$getQuery = "INSERT INTO comments( fromID, toID, comment) 
+	VALUES ( :fromAccountID, :forUserID, :comment)";
+	$query = $conn->PREPARE( $getQuery );
+    $query->EXECUTE([
+	':fromAccountID' => $fromAccountID,
+	':forUserID' => $forUserID,
+	':comment' => $commentText]);
+  }
+  public function getComments ($ID) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT comment FROM comments WHERE toID = :id";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":id", $ID);
+    $q->execute();
+    return $q->fetchAll();
+  }
 
 
 }
