@@ -40,7 +40,7 @@ $cost = $cost[0];
 
 		<div class="droneNameDisplay">
 			<?php echo'Name: '. $db->getFirstName($username)[0] ." ". $db->getLastName($username)[0] ."<br>";
-			echo'Contact Information:';
+			echo'Contact Information: <br>';
 			echo'Email: ' . $db->getEmail($username)[0] ."<br>";
 			echo'Charges ' . $cost ."$ an hour!"; 			
 			?> 
