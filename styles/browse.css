@@ -44,6 +44,9 @@ ul.signupList{
     margin: 10px;
 
 }
+#tabBrowse{
+border: 1px solid white;
+}
 
 a.browselink { 
 

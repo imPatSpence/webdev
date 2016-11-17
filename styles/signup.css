@@ -29,6 +29,9 @@ input[type=text] , input[type="password"] {
 ul.signupList{
 	list-style: none;
 }
+#tabSignup{
+border: 1px solid white;
+}
 .blueSubmitButton {
     background-color: #183252;
     border: none;

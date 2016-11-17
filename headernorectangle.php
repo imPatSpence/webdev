@@ -15,21 +15,21 @@ session_start();
 			</div>
 			<div class ="HAB">
 
-				<li class ="toolbar"><a href="browse.php">Search</a></li>
+				<li id = "tabBrowse" class ="toolbar"><a href="browse.php">Search</a></li>
 			</div>
 			<?php
 			
 			 echo "<div class =\"LS\">";
 			 //if not logged in print signup and login 
 			 if(!isset($_SESSION["authed_user"])){
-				echo "<li class =\"toolbar\"><a href=\"login.php\">Login</a></li>";
-				echo "<li class =\"toolbar\"><a href=\"signup.php\">Signup</a></li>";
+				echo "<li id = \"tabLogin\" class =\"toolbar\"><a href=\"login.php\">Login</a></li>";
+				echo "<li id = \"tabSignup\" class =\"toolbar\"><a href=\"signup.php\">Signup</a></li>";
 				echo "</div>" ;
 			}
 			//else print profile edit and logout
 			else{
 				echo "<li class =\"toolbar\"><a href=\"droneProfile.php?page=$id[0]\">Profile</a></li>";
-				echo "<li class =\"toolbar\"><a href=\"editAccount.php\">Edit</a></li>";
+				echo "<li id = \"tabEdit\" class =\"toolbar\"><a href=\"editAccount.php\">Edit</a></li>";
 				echo "<li class =\"toolbar\"><a href=\"logout.php\">Logout!</a></li>";
 			}
 			?>

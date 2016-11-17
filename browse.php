@@ -54,7 +54,6 @@ if(!isset($_SESSION["authed_user"])){
 				</form>
 				</ul>
 				<ul class= "signupList">
-				<li>Search by a filter</li>
 				</ul>
 						
 			<!-- 	<input id="option" type="checkbox" name="field" value="option">
