@@ -94,8 +94,12 @@
 				}
 				//seeker only options
 				else{
-					echo "seeker options not implemented yet";
+					//Profile Description
+					echo "<li><label for=\"description\">Write a Profile Description:</label></li>
+					<textarea id=\"description\" name=\"description\" rows=\"9\" cols=\"36\">$description[0]</textarea></li>";
+					echo"<br>";
 				}
+				
 				?>
 				
  				<li><a class="password" href="/changePassword.php">Change Password</a>
