@@ -9,14 +9,18 @@
   $description = (isset($_POST["description"])) ? $_POST["description"] : "";
   $fileName = $_FILES["file"]["location"];
   
-  $target_dir = "images/";
-  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  $target_dir = "/images";
 
-
-if (move_uploaded_file($_FILES["fileToUpload"]["file"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
   
+  $dest = $_SERVER['DOCUMENT_ROOT'];
+  $finalPath= $dest.$target_dir.$fileName;
+  
+if ( move_uploaded_file ( $_FILES["fileToUpload"]["tmp_name"], $finalPath ) )
+   echo "Download completed";
+else
+   echo "Error";
+
+//move_uploaded_file ($_FILES['fileToUpload'] ['tmp_name'], 
+ //      "/uploads/{$_FILES['fileToUpload'] ['name']}")
+
   ?>
