@@ -10,7 +10,7 @@ $cost = $cost[0];
 
 <html>
 <head>
- <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
@@ -31,6 +31,10 @@ $cost = $cost[0];
   <title>droneProfile</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/droneProfile2.css">
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="/js/PgwSlider-master/pgwslider.js"></script>
+	<link href="/js/PgwSlider-master/pgwslider.min.css" rel="stylesheet" type="text/css">
+
  </head>
  <body>
  	<div>
@@ -47,7 +51,18 @@ $cost = $cost[0];
 		</div>
 
 		<div class= "slideshow">
-			SLIDESHOW
+		
+		<script>
+		$(document).ready(function() {
+			$('.pgwSlider').pgwSlider();
+		});
+		</script>
+		
+			<ul class="pgwSlider">
+    <li><img src="images/droneExample.jpg" alt="Paris, France" data-description="Eiffel Tower and Champ de Mars"></li>
+    <li><img src="montreal_mini.jpg" alt="Montréal, QC, Canada" data-large-src="montreal.jpg"></li>
+
+	</ul>
 		</div>
 
 		
