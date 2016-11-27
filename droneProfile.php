@@ -58,11 +58,19 @@ $cost = $cost[0];
 		});
 		</script>
 		
-			<ul class="pgwSlider">
-    <li><img src="images/droneExample.jpg" alt="Paris, France" data-description="Eiffel Tower and Champ de Mars"></li>
-    <li><img src="montreal_mini.jpg" alt="Montréal, QC, Canada" data-large-src="montreal.jpg"></li>
+		<ul class="pgwSlider">
+			<?php 
+				$profileImageInformation = $db->getProfileImagesInformation($username);
+	
+				foreach ($profileImageInformation as $information){
+					echo "<li><img src=\"" .$information["imgPath"] . " \" alt= \"" .$information["locationTaken"] . " \" data-description=\"" .$information["description"] ." \"></li>";
+				}
+			
+			?>
+			
+			<!-- <li><img src="montreal_mini.jpg" alt="Montréal, QC, Canada" data-large-src="montreal.jpg"></li> -->
 
-	</ul>
+		</ul>
 		</div>
 
 		

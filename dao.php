@@ -223,6 +223,26 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return $q->fetchAll();
   }
+  public function uploadImagePath($imgPath, $ownerUsername, $locationTaken, $description) {
+	$conn = $this->getConnection();
+	$getQuery = "INSERT INTO imageupload( imgPath, ownerUsername, locationTaken, description) 
+	VALUES ( :imgPath, :ownerUsername, :locationTaken, :description)";
+	$query = $conn->PREPARE( $getQuery );
+    $query->EXECUTE([
+	':imgPath' => $imgPath,
+	':ownerUsername' => $ownerUsername,
+	':locationTaken' => $locationTaken,
+	':description' => $description]);
+  }
+  
+   public function getProfileImagesInformation ($Username) {
+    $conn = $this->getConnection();
+    $getQuery = "SELECT imgPath, locationTaken, description FROM imageupload WHERE ownerUsername = :Username";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":Username", $Username);
+    $q->execute();
+    return $q->fetchAll();
+  }
 
 
 }
