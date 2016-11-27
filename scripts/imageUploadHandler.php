@@ -14,16 +14,20 @@
   
 if ( move_uploaded_file ( $_FILES["fileToUpload"]["tmp_name"], $finalPath ) ){
    
-   echo "Upload Completed";
+  // echo "Upload Completed";
    $databasePath = "userUploads/".$fileToUpload;
-   echo $databasePath;
-   echo $accountName;
-   echo $location;
-   echo $description;
-   
+ //  echo $databasePath;
+  // echo $accountName;
+ //  echo $location;
+ //  echo $description;
+   $_SESSION["imageUploaded"] = "Sucessfully updated uploaded profile Image!";
    $db->uploadImagePath( $databasePath, $accountName, $location, $description );
+   
+   header('Location: /../editAccount.php');
 }
 else {
+	$_SESSION["imageUploadedError"] = "Error when uploading profile image!";
+	header('Location: /../editAccount.php');
    echo "Error";
 }
 

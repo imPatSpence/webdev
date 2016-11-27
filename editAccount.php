@@ -53,7 +53,18 @@
 								echo "<br>";
 								unset($_SESSION['passwordUpdated']);
 							}
+							if(isset($_SESSION["imageUploaded"])){
+								echo $_SESSION["imageUploaded"];
+								echo "<br>";
+								unset($_SESSION['imageUploaded']);
+							}
 							?></div>
+			<!-- For imageupload ERRORS-->
+			<div class = "error"><?php if(isset($_SESSION["imageUploadedError"])){
+								echo $_SESSION["imageUploadedError"];
+								echo "<br>";
+								unset($_SESSION['imageUploadedError']);
+							}?></div>
 	
 		<legend>Edit <?php echo $type[0]; ?> Account</legend>
 			<form action ="/scripts/editAccount-formhander.php" method ="POST">
@@ -101,7 +112,7 @@
 				}
 				
 				?>
-				
+				<li><a class="password" href="/imageUpload.php">Upload Profile Images</a>
  				<li><a class="password" href="/changePassword.php">Change Password</a>
 				<input type = "submit" class ="blueSubmitButton">
 			</ul>

@@ -55,7 +55,7 @@ $accountName = $_SESSION["authed_user"];
           <label for="fileToUpload">Image:</label>
           <input type="file" name="fileToUpload" id="fileToUpload"><br>
 		  
-          <input type="submit" name="submit" value="submit">
+          <input type = "submit" class ="blueSubmitButton">
         </div>
 	</div>
      </form>
