@@ -204,6 +204,22 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return $q->fetchAll();
   }
+  public function browseByTypeOfWork($TypeOfWork){
+    $conn = $this->getConnection();
+    $getQuery = "SELECT id, firstname,typeofwork, lastname, cost, dronetype FROM users WHERE TypeOfWork = :TypeOfWork";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":TypeOfWork", $TypeOfWork);
+    $q->execute();
+    return $q->fetchAll();
+  }
+   public function browseByDroneType($droneType){
+    $conn = $this->getConnection();
+    $getQuery = "SELECT id, firstname,typeofwork, lastname, cost, dronetype FROM users WHERE droneType = :droneType";
+    $q = $conn->prepare($getQuery);
+    $q->bindParam(":droneType", $droneType);
+    $q->execute();
+    return $q->fetchAll();
+  }
   
     public function setComment($fromAccountID, $forUserID, $commentText) {
 	$conn = $this->getConnection();

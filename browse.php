@@ -8,6 +8,8 @@ require_once "dao.php";
 session_start();
 $db = new dao();
 $firstnameSearched = $_GET['firstnames'];
+$typeofworkSearched = $_GET['TypeOfWork'];
+$droneTypeSearched = $_GET['droneType'];
 
 //Must be logged in to see this page
 if(!isset($_SESSION["authed_user"])){
@@ -50,6 +52,20 @@ if(!isset($_SESSION["authed_user"])){
 
   				<li><label for="fName">Search by first name</label></li>
   				<input type="text" id="fName" name="fName"></li>
+  				<br>or by Filter: <br>
+  				<!-- Filters -->
+  				<select name="TypeOfWork" id="TypeOfWork">
+				 	<option selected disabled>Type of Work</option>
+					<option value="RealEstate">Real Estate</option>
+ 					<option value="Photography">Photography</option>
+ 					<option value="Military">Military</option>
+					</select>
+  				<select name="droneType" id="droneType">
+				 	<option selected disabled>Drone Type</option>
+					<option value="Quadracopter">Quadracopter</option>
+ 					<option value="Fixed wing">Fixed Wing</option>
+					</select>
+				<!-- End Filters -->
   				<input type = "submit" class ="button">
 				</form>
 				</ul>
@@ -72,7 +88,7 @@ if(!isset($_SESSION["authed_user"])){
 			</div>
 				<?php
 				//Array of IDs that share the same first name
-				$fNameID = $db->browseFirstName($firstnameSearched);
+				
 				//username that corresponds with id
 				//$username = $db->getUsername($fNameID[0]);
 				//$firstname = $db->getFirstName($username[0]);
@@ -99,20 +115,51 @@ if(!isset($_SESSION["authed_user"])){
 				// echo "</tr>";	
 
 				
+				if($firstnameSearched != ""){
 
-				foreach ($fNameID as $value ){ 
-				//Values should be each ID returned
-				$username = $db->getUsername($value[0]);
-				echo "<tr>";
+					$fNameID = $db->browseFirstName($firstnameSearched);
 
-				echo "<td> <a href= \" droneProfile.php?page=".$value['id'] ." \" class=\"browselink\"> " . $value['firstname'] . "</td>";
-				echo "<td>".$value['lastname']."</td>";
-				echo "<td>".$value['typeofwork']."</td>";
-				echo "<td>".$value['dronetype']."</td>";
-				echo "<td>".$value['cost']."</td>";
-							
-				echo "</tr>";	
+					foreach ($fNameID as $value ){ 
+					//Values should be each ID returned
+					$username = $db->getUsername($value[0]);
+					echo "<tr>";
+
+					echo "<td> <a href= \" droneProfile.php?page=".$value['id'] ." \" class=\"browselink\"> " . $value['firstname'] . "</td>";
+					echo "<td>".$value['lastname']."</td>";
+					echo "<td>".$value['typeofwork']."</td>";
+					echo "<td>".$value['dronetype']."</td>";
+					echo "<td>".$value['cost']."</td>";		
+					echo "</tr>";	
+					}
 				}
+
+				else if($typeofworkSearched != ""){
+					$TypeOfWorkReturn = $db->browseByTypeOfWork($typeofworkSearched);
+
+					foreach($TypeOfWorkReturn as $value){
+						echo "<td> <a href= \" droneProfile.php?page=".$value['id'] ." \" class=\"browselink\"> " . $value['firstname'] . "</td>";
+						echo "<td>".$value['lastname']."</td>";
+						echo "<td>".$value['typeofwork']."</td>";
+						echo "<td>".$value['dronetype']."</td>";
+						echo "<td>".$value['cost']."</td>";		
+						echo "</tr>";
+					}
+
+				}
+				else if($droneTypeSearched != ""){
+					echo "test";
+					$droneTypeReturn = $db->browseByDroneType($droneTypeSearched);
+
+					foreach($droneTypeReturn as $value){
+						echo "<td> <a href= \" droneProfile.php?page=".$value['id'] ." \" class=\"browselink\"> " . $value['firstname'] . "</td>";
+						echo "<td>".$value['lastname']."</td>";
+						echo "<td>".$value['typeofwork']."</td>";
+						echo "<td>".$value['dronetype']."</td>";
+						echo "<td>".$value['cost']."</td>";		
+						echo "</tr>";
+					}
+				}
+
 				?>
 			
 			
