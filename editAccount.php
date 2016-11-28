@@ -96,7 +96,7 @@
 					echo"Type of work: $droneUse[0] </br>";
 					echo"<select name=\"droneUse\" id=\"doneUse\"> ";
 					echo '<option selected disabled ">Select</option>';
-					echo '<option value="Real Estate">Real Estate</option>';
+					echo '<option value="Housing">Housing</option>';
  					echo "<option value=\"Photography\">Photography</option>";
  					echo "<option value=\"Military\">Military</option>";
  				//	echo "<option value=\"volvo\">Volvo</option>";

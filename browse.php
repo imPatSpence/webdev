@@ -56,7 +56,7 @@ if(!isset($_SESSION["authed_user"])){
   				<!-- Filters -->
   				<select name="TypeOfWork" id="TypeOfWork">
 				 	<option selected disabled>Type of Work</option>
-					<option value="RealEstate">Real Estate</option>
+					<option value="Housing">Housing</option>
  					<option value="Photography">Photography</option>
  					<option value="Military">Military</option>
 					</select>
