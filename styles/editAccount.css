@@ -11,6 +11,7 @@
 	box-shadow: 10px 10px 5px #888888;
 	min-width: 35%;
 	max-width: 40%;
+    margin-bottom: 5em;
 }
 legend{
     font-size: 25px;

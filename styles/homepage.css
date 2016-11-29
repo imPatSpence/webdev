@@ -78,24 +78,27 @@ div.quoteUnderPicture {
 }
 
 div.leftReason{
-	height: 15%;
+	height: auto;
 	margin-left: 10%;
 	margin-right:5%;
 	display: inline-block;
 	width: 20%;
 	background-color: white;
+	margin-bottom: 5em;
 }
 div.centerReason{
-	height: 15%;
+	height: auto;
 	width: 20%;
 	margin-right:5%;
 	display: inline-block;
 	background-color:  white;
+	margin-bottom: 5em;
 }
 div.rightReason{
-	height: 15%;
+	height: auto;
 	margin-right: 10%;
 	width: 20%;
 	display: inline-block;
 	background: white;
+	margin-bottom: 5em;
 }
