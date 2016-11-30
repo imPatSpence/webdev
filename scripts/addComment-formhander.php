@@ -5,7 +5,7 @@ $db = new dao();
 
 $FromAccountID = $db->getAccountID($_SESSION["authed_user"])[0];
 $forProfileID = $_POST["forProfile"];
-$theComment = $_POST["comment"];
+$theComment = htmlentities($_POST["comment"]);
 
 
 
