@@ -47,7 +47,7 @@
 			Convenience <br> We make it easy to find, and email drones pilots on your desktop, your tablet, or with your smartphone.
 	</div>
 		<div class="centerReason">
-				Value <br> Rent the same make and model drone you fly at home, from everywhere across the US. We’ll save you money!
+				Value <br> Rent the same drones that would otherwise cost a fortune. We’ll save you money!
 	</div>
 		<div class ="rightReason">
 				Safety <br> Each of our pilots are FAA certified.  Safety is not a problem, we know the regulations. 
