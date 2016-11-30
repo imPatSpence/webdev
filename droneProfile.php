@@ -9,6 +9,13 @@ $cost = $cost[0];
 $type = $db->getAccountType($username);
 ?>
 
+<?php 
+
+ if($username == ""){
+ 	header('Location: 404.php');
+ }
+
+?>
 <html>
 <head>
 <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
