@@ -19,6 +19,7 @@
 <meta name="theme-color" content="#ffffff">
 
   <title>Home</title>
+ 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/homepage.css">
  </head>

@@ -28,6 +28,8 @@ $accountName = $_SESSION["authed_user"];
   <title>Image Upload</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/imageUpload.css">
+	 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
 	
   </head>
   <body>

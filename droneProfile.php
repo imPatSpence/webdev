@@ -6,6 +6,7 @@ $username = $db->getUsername($id);
 $username = $username[0];
 $cost = $db->getCost($username);
 $cost = $cost[0];
+$type = $db->getAccountType($username);
 ?>
 
 <html>
@@ -31,6 +32,7 @@ $cost = $cost[0];
   <title>droneProfile</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/droneProfile2.css">
+	 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<script src="js/jquery-3.1.1.js"></script>
 	<script src="/js/PgwSlider-master/pgwslider.js"></script>
 	<link href="/js/PgwSlider-master/pgwslider.min.css" rel="stylesheet" type="text/css">
@@ -46,6 +48,7 @@ $cost = $cost[0];
 			<?php echo'Name: '. $db->getFirstName($username)[0] ." ". $db->getLastName($username)[0] ."<br>";
 			echo'Contact Information:' ."<br>";
 			echo'Email: ' . $db->getEmail($username)[0] ."<br>";
+			if($type[0] == "Operator")
 			echo'Charges ' . $cost ."$ an hour!"; 			
 			?> 
 		</div>
@@ -98,13 +101,14 @@ $cost = $cost[0];
 					<textarea id="comment" name="comment" rows="9" cols="36"></textarea></li>
 					<input type = "submit" class ="blueSubmitButton">
 			</form>
-			Past comments:
+			Past comments:<br>
 			<?php 
 			$comments = $db->getComments($id);
 	
 			foreach ($comments as $comment ){
 				echo '<br>';
-				echo $comment[0];
+				echo $comment["comment"] ." <br>Written by: ". $db->getUsername($comment["fromID"])[0];
+				echo '<br>';
 			}
 			?>
 		</div>

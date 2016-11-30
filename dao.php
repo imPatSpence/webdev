@@ -233,7 +233,7 @@ public function checkUserAndPass ($username, $password) {
   }
   public function getComments ($ID) {
     $conn = $this->getConnection();
-    $getQuery = "SELECT comment FROM comments WHERE toID = :id";
+    $getQuery = "SELECT comment, fromID FROM comments WHERE toID = :id ORDER BY id desc";
     $q = $conn->prepare($getQuery);
     $q->bindParam(":id", $ID);
     $q->execute();
@@ -259,6 +259,14 @@ public function checkUserAndPass ($username, $password) {
     $q->execute();
     return $q->fetchAll();
   }
+  // public function getCommentAuthor ($CommentID) {
+  //   $conn = $this->getConnection();
+  //   $getQuery = "SELECT fromID FROM comments WHERE id = :id";
+  //   $q = $conn->prepare($getQuery);
+  //   $q->bindParam(":CommentID", $CommentID);
+  //   $q->execute();
+  //   return $q->fetchAll();
+  // }
 
 
 }

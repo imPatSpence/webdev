@@ -9,13 +9,14 @@ $theComment = $_POST["comment"];
 
 
 
-echo $forProfileID;
-echo $theComment;
-echo $FromAccountID;
+// echo $forProfileID;
+// echo $theComment;
+// echo $FromAccountID;
 
 //if there is a comment in box
 if(isset($_POST["comment"]) && $_POST["comment"] != ""){	
 		$db->setComment($FromAccountID, $forProfileID, $theComment );
 	}
-	header('Location: ../droneProfile.php?page='.$forProfileID);
+
+header('Location: ../droneProfile.php?page='.$forProfileID);
 ?>

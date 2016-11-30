@@ -42,6 +42,8 @@ if(!isset($_SESSION["authed_user"])){
   <title>Browse</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/browse.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
  </head>
  <body>
 	<fieldset class = "searchbox">
