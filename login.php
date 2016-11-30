@@ -71,7 +71,7 @@
 					<li><label for="password">Password</label></li>
 					<input type="password" id="password" name="password">
 					<input type = "submit" class ="blueSubmitButton">
-					<li> Forgot Password?</li>
+					
 				</ul>
 				
 			</form>
