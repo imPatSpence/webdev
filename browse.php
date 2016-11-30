@@ -13,7 +13,7 @@ $droneTypeSearched = $_GET['droneType'];
 
 //Must be logged in to see this page
 if(!isset($_SESSION["authed_user"])){
-	$_SESSION["Unauthorized"] = "Must be logged in to see the previous Page!";
+	$_SESSION["Unauthorized"] = "Must be logged in!";
 	header('Location: ../login.php');
 }
 ?>
