@@ -13,7 +13,7 @@ $currTypeWork = $db->getDroneUse($accountName);
 		if($_POST["description"] == $description[0]){	
 		}
 		else{
-			$description = $_POST['description'];
+			$description = htmlentities($_POST['description']);
 		//	echo "$accountName $description";
 			$db->setDescription($accountName,$description);
 			$_SESSION["ProfileDescriptionUpdated"] = "Sucessfully updated profile Description!";
