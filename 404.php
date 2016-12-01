@@ -24,16 +24,18 @@ session_start();
 
   <title>404</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" type="text/css" href="styles/droneProfile2.css">
 	 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<script src="js/jquery-3.1.1.js"></script>
 	<script src="/js/PgwSlider-master/pgwslider.js"></script>
 	<link href="/js/PgwSlider-master/pgwslider.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="styles/editAccount.css">
+
 
  </head>
  <body>
+<fieldset class = "loginbox">
+ERORR 404, Page does not exist.
 
-PAGE DOES NOT EXIST
 </body>
 <div class="footer">
 		<div id="rectangleFooter">
