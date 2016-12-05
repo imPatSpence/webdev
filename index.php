@@ -54,6 +54,12 @@
 		</div>
 	
 	</div>
+	
+	<div class="footer">
+		<div id="rectangleFooter">
+			<?php require_once 'footer.php'; ?>
+		</div>
+	</div>
 
 </div>
 
