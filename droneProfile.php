@@ -59,10 +59,12 @@ $type = $db->getAccountType($username);
 			echo'Charges ' . $cost ."$ an hour!"; 			
 			?> 
 		</div>
+		<?php
 		if($type[0] == "Operator"){
+			
 		<div class= "slideshow">
 		
-		<script>
+		echo'<script>
 		$(document).ready(function() {
 			$('.pgwSlider').pgwSlider();
 		});
@@ -81,8 +83,10 @@ $type = $db->getAccountType($username);
 			<!-- <li><img src="montreal_mini.jpg" alt="Montréal, QC, Canada" data-large-src="montreal.jpg"></li> -->
 
 		</ul>
-		</div>
+		</div>';
+		
 		}
+		?>
 
 		
 
