@@ -59,7 +59,7 @@ $type = $db->getAccountType($username);
 			echo'Charges ' . $cost ."$ an hour!"; 			
 			?> 
 		</div>
-
+		if($type[0] == "Operator"){
 		<div class= "slideshow">
 		
 		<script>
@@ -82,6 +82,7 @@ $type = $db->getAccountType($username);
 
 		</ul>
 		</div>
+		}
 
 		
 
