@@ -60,29 +60,34 @@ $type = $db->getAccountType($username);
 			?> 
 		</div>
 		
-		<div class= "slideshow">
+	<?php
+		if($type[0] == "Operator"){
+			
+		echo'<div class= "slideshow">';
 		
-		<script>
+		echo'<script>
 		$(document).ready(function() {
-			$('.pgwSlider').pgwSlider();
+			$(\'.pgwSlider\').pgwSlider();
 		});
-		</script>
+		</script>';
 		
-		<ul class="pgwSlider">
-			<?php 
+		echo '<ul class="pgwSlider">';
+			
 				$profileImageInformation = $db->getProfileImagesInformation($username);
 	
 				foreach ($profileImageInformation as $information){
 					echo "<li><img src=\"" .$information["imgPath"] . " \" alt= \"" .$information["locationTaken"] . " \" data-description=\"" .$information["description"] ." \"></li>";
 				}
 			
-			?>
+		
 			
-			<!-- <li><img src="montreal_mini.jpg" alt="Montréal, QC, Canada" data-large-src="montreal.jpg"></li> -->
+			echo '<!-- <li><img src="montreal_mini.jpg" alt="Montréal, QC, Canada" data-large-src="montreal.jpg"></li> -->';
 
-		</ul>
-		</div>
-
+		echo'</ul>
+		
+		</div>';
+		}
+	?>
 		
 
 		<div class= "DescriptionBox">
