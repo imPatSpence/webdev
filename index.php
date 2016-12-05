@@ -32,7 +32,7 @@
 
 		<div class ="sloganBox">
 			<ul class = "middleFront">
-			<li class= "middleFrontItems">Get ABOVE the competition!</li><br><br>
+			<li class= "middleFrontItems"><font color="#183252">Get ABOVE the competition!</font></li><br><br>
 			<li class = "middleFrontItems"><a class="buttonWhite" href= "browse.php">Search!</a></button> <a class="buttonBlue" href="signup.php">Signup!</a> </li>
 			</ul>
 		</div>
