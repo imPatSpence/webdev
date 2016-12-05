@@ -103,6 +103,7 @@
  					echo "<option value=\"Military\">Military</option>";
  				//	echo "<option value=\"volvo\">Volvo</option>";
 					echo "</select>";
+					echo'<li><a class="password" href="/imageUpload.php">Upload Profile Images</a>';
   
 				}
 				//seeker only options
@@ -114,7 +115,7 @@
 				}
 				
 				?>
-				<li><a class="password" href="/imageUpload.php">Upload Profile Images</a>
+				
  				<li><a class="password" href="/changePassword.php">Change Password</a>
 				<input type = "submit" class ="blueSubmitButton">
 			</ul>
