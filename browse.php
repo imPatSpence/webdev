@@ -149,7 +149,7 @@ if(!isset($_SESSION["authed_user"])){
 
 				}
 				else if($droneTypeSearched != ""){
-					echo "test";
+			
 					$droneTypeReturn = $db->browseByDroneType($droneTypeSearched);
 
 					foreach($droneTypeReturn as $value){
